@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¿Cuánto se le paga a una empleada doméstica por días en 2026? | Cuentas Claras</title>
+<meta name="description" content="Calcula el pago mínimo legal por día de una empleada doméstica en Colombia 2026, la seguridad social por semanas, las prestaciones y lo que cuesta al mes tener todo en regla.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F8; --paper:#FFFFFF; --ink:#18203D; --ink-soft:#4A5272; --line:#D7DCEB;
+  --anil:#2443C9; --anil-soft:#E3E8FB; --sol:#FFC83D; --sol-ink:#3A2A00;
+  --ok:#17804F; --ok-soft:#E1F4EA; --bad:#C2372C; --bad-soft:#FBE6E3; --warn-soft:#FFF4D6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10142A; --paper:#1A2040; --ink:#EEF1FA; --ink-soft:#AEB5D2; --line:#2E3660;
+    --anil:#8FA5FF; --anil-soft:#232C5C; --sol:#FFC83D; --sol-ink:#3A2A00;
+    --ok:#5FD39A; --ok-soft:#173A2B; --bad:#FF8A7E; --bad-soft:#40201E; --warn-soft:#3A3115;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10142A; --paper:#1A2040; --ink:#EEF1FA; --ink-soft:#AEB5D2; --line:#2E3660;
+  --anil:#8FA5FF; --anil-soft:#232C5C; --sol:#FFC83D; --sol-ink:#3A2A00;
+  --ok:#5FD39A; --ok-soft:#173A2B; --bad:#FF8A7E; --bad-soft:#40201E; --warn-soft:#3A3115;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:var(--anil)}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sol);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.num{font-variant-numeric:tabular-nums}
+
+/* Header */
+header{padding:18px 0 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--anil);display:grid;place-items:center;color:#fff;font-size:1rem}
+.brand small{display:block;font-family:"Public Sans",sans-serif;font-weight:500;font-size:.78rem;color:var(--ink-soft)}
+
+/* Hero */
+.hero{padding:34px 0 22px}
+.hero h1{font-size:clamp(2rem,6.4vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:17ch}
+.hero p{margin:14px 0 0;color:var(--ink-soft);font-size:1.06rem;max-width:56ch}
+.stamp{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:6px 12px;border-radius:999px;background:var(--anil-soft);color:var(--anil);font-weight:600;font-size:.86rem}
+
+/* Layout */
+.tool{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);padding-bottom:40px}
+.tool>*{min-width:0}
+@media (min-width:900px){.tool{grid-template-columns:minmax(0,1fr) minmax(0,440px);align-items:start}.receipt-col{position:sticky;top:calc(env(safe-area-inset-top,0px) + 18px)}}
+
+/* Form */
+.form{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px}
+.q{padding:18px 0;border-bottom:1px solid var(--line)}
+.q:first-child{padding-top:4px}
+.q:last-child{border-bottom:0;padding-bottom:4px}
+.q h2{font-size:1.18rem;font-weight:700}
+.q .hint{margin:6px 0 0;color:var(--ink-soft);font-size:.92rem}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:14px}
+.day{aspect-ratio:1/1;min-height:46px;border-radius:14px;border:2px solid var(--line);background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.15rem;transition:transform .12s ease,background .15s ease,border-color .15s ease}
+.day span{font-family:"Public Sans",sans-serif;font-weight:500;font-size:.66rem;color:var(--ink-soft)}
+.day[aria-pressed="true"]{background:var(--sol);border-color:var(--sol);color:var(--sol-ink)}
+.day[aria-pressed="true"] span{color:var(--sol-ink)}
+.day:active{transform:scale(.94)}
+.stepper{display:flex;align-items:center;gap:12px;margin-top:14px}
+.stepper button{width:46px;height:46px;border-radius:14px;border:2px solid var(--line);background:transparent;font-size:1.4rem;font-weight:700;cursor:pointer}
+.stepper output{min-width:110px;text-align:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem}
+.stepper .reset{width:auto;height:auto;border:0;font-size:.88rem;font-weight:600;color:var(--anil);padding:6px;text-decoration:underline}
+.money{display:flex;align-items:center;margin-top:14px;border:2px solid var(--line);border-radius:14px;padding:0 14px;background:transparent}
+.money:focus-within{border-color:var(--anil)}
+.money b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;color:var(--ink-soft)}
+.money input{flex:1;min-width:0;border:0;background:transparent;padding:13px 8px;font-size:1.3rem;font-weight:600;outline:none}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.seg button{padding:12px;border-radius:14px;border:2px solid var(--line);background:transparent;font-weight:600;cursor:pointer;text-align:left;line-height:1.3}
+.seg button small{display:block;font-weight:400;color:var(--ink-soft);font-size:.8rem;margin-top:2px}
+.seg button[aria-pressed="true"]{border-color:var(--anil);background:var(--anil-soft)}
+.date{margin-top:14px;width:100%;min-width:0;max-width:100%;display:block;border:2px solid var(--line);border-radius:14px;padding:12px 14px;background:transparent;font-size:1.1rem;font-weight:600}
+.date:focus{border-color:var(--anil);outline:none}
+.cal{list-style:none;margin:12px 0 0;padding:0}
+.cal li{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.cal li:last-child{border-bottom:0}
+.cal .d{background:var(--anil-soft);color:var(--anil);border-radius:12px;text-align:center;padding:6px 4px;line-height:1.1}
+.cal .d b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem}
+.cal .d span{font-size:.72rem;font-weight:600}
+.cal .w b{display:block;font-size:.98rem}
+.cal .w span{display:block;font-size:.82rem;color:var(--ink-soft);line-height:1.35;margin-top:2px}
+.cal .m{font-weight:800;font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem;white-space:nowrap}
+.cal li.soon .d{background:var(--sol);color:var(--sol-ink)}
+.info{margin-top:12px;border-radius:14px;background:var(--bg);padding:12px 14px}
+.info summary{cursor:pointer;font-weight:600;color:var(--anil);list-style:none}
+.info summary::-webkit-details-marker{display:none}
+.info p{margin:8px 0 0;font-size:.92rem;color:var(--ink-soft)}
+.info strong{color:var(--ink)}
+.saludnote{margin-top:12px;border-radius:16px;padding:14px 16px;border:2px solid var(--line)}
+.saludnote.yes{border-color:var(--bad);background:var(--bad-soft)}
+.saludnote.no{border-color:var(--ok);background:var(--ok-soft)}
+.saludnote.maybe{border-color:var(--sol);background:var(--bg)}
+.saludnote .t{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;line-height:1.2}
+.saludnote.yes .t{color:var(--bad)} .saludnote.no .t{color:var(--ok)}
+.saludnote p{margin:6px 0 0;font-size:.92rem}
+.saludnote ul{margin:8px 0 0;padding:0;list-style:none;font-size:.92rem}
+.saludnote li{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.saludnote a{font-weight:600}
+.saludnote.flash{animation:pop .4s ease}
+.steps{counter-reset:s;list-style:none;padding:0;margin:16px 0}
+.steps li{counter-increment:s;position:relative;padding:0 0 18px 48px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--anil);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800}
+.steps li strong{display:block;color:var(--ink);font-size:1.02rem;margin-bottom:2px}
+.pilabox{background:var(--anil-soft);border-radius:16px;padding:16px;margin:14px 0}
+.pilabox h3{font-size:1.05rem;margin-bottom:6px}
+.pilabox ul{margin:0;padding:0;list-style:none}
+.pilabox li{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.pilabox li:last-child{border-bottom:0}
+.pilabox li span:first-child{color:var(--ink-soft)}
+.ahorro{margin-top:10px;padding:12px 14px;border-radius:12px;background:var(--anil-soft);font-size:.9rem}
+.cta{display:block;margin-top:14px;padding:16px;border-radius:16px;border:2px solid var(--anil);text-decoration:none;color:var(--ink)}
+.cta b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.1rem;color:var(--anil);display:block}
+.cta span{font-size:.9rem;color:var(--ink-soft)}
+
+/* Verdict */
+.verdict{border-radius:18px;padding:14px 16px;margin-bottom:14px;font-weight:600;display:none}
+.verdict.show{display:block}
+.verdict.ok{background:var(--ok-soft);color:var(--ok)}
+.verdict.bad{background:var(--bad-soft);color:var(--bad)}
+.verdict p{margin:2px 0 0;font-weight:400;color:var(--ink)}
+
+/* Receipt: the one bold element */
+.receipt{position:relative;background:var(--paper);color:var(--ink);padding:26px 22px 30px;border-radius:6px 6px 0 0;filter:drop-shadow(0 18px 30px rgba(24,32,61,.14))}
+.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:var(--paper);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%;
+          mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%}
+.r-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:14px;border-bottom:2px dashed var(--line)}
+.r-head h2{font-size:1.05rem;font-weight:700}
+.r-head span{font-size:.82rem;color:var(--ink-soft)}
+.big{padding:20px 0 6px}
+.big .label{color:var(--ink-soft);font-weight:500}
+.big .value{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2.6rem,11vw,3.6rem);letter-spacing:-.02em;line-height:1;margin-top:4px}
+.big .value.pop{animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.045)}100%{transform:scale(1)}}
+.rows{margin:10px 0 0;padding:0;list-style:none}
+.rows li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;font-size:.95rem}
+.rows li span:first-child{color:var(--ink-soft)}
+.rows li.sub span:first-child{padding-left:14px}
+.rows li.sum{border-top:1px solid var(--line);margin-top:4px;padding-top:10px;font-weight:700}
+.rows li.sum span:first-child{color:var(--ink)}
+.block{padding-top:16px;margin-top:14px;border-top:2px dashed var(--line)}
+.block h3{font-size:1rem;font-weight:700}
+.block h3 small{font-family:"Public Sans",sans-serif;font-weight:500;color:var(--ink-soft);font-size:.82rem}
+.total{margin-top:18px;padding:16px;border-radius:14px;background:var(--anil);color:#fff}
+.total .label{opacity:.88;font-weight:500;font-size:.92rem}
+.total .value{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2rem;line-height:1.1;margin-top:2px}
+.prima{margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--sol);color:var(--sol-ink)}
+.prima b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;display:block}
+.prima span{font-size:.88rem}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:14px;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;font-size:.98rem}
+.btn-wa{background:#1FA855;color:#fff}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.empty{padding:30px 0 10px;color:var(--ink-soft)}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;opacity:0;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Explainer */
+.explain{background:var(--paper);border-top:1px solid var(--line);padding:44px 0 30px}
+.explain .col{max-width:720px}
+.explain h2{font-size:clamp(1.5rem,4.4vw,2.1rem);font-weight:800;letter-spacing:-.01em;margin:34px 0 10px}
+.explain h2:first-child{margin-top:0}
+.explain p,.explain li{color:var(--ink-soft)}
+.explain strong{color:var(--ink)}
+.formula{background:var(--bg);border-radius:14px;padding:14px 16px;margin:12px 0;overflow-x:auto}
+.formula div{display:flex;justify-content:space-between;gap:16px;padding:4px 0;white-space:nowrap}
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.weeks div{background:var(--bg);border-radius:12px;padding:12px 8px;text-align:center}
+.weeks b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.25rem;color:var(--ink)}
+.weeks span{font-size:.8rem;color:var(--ink-soft)}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--anil)}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+footer{padding:28px 0 36px;color:var(--ink-soft);font-size:.86rem}
+footer .soon{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+footer .soon span{padding:6px 12px;border-radius:999px;border:1px solid var(--line)}
+
+/* Contrato */
+#contrato .law{margin-top:16px;padding:14px 16px;border-radius:16px;background:var(--warn-soft);font-size:.94rem}
+#contrato .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px;margin-bottom:40px}
+#contrato .progress{display:flex;gap:6px;margin-bottom:8px}
+#contrato .progress i{flex:1;height:6px;border-radius:9px;background:var(--line)}
+#contrato .progress i.on{background:var(--anil)}
+#contrato .steplabel{color:var(--ink-soft);font-size:.88rem;font-weight:600}
+#contrato .step{display:none;padding-top:14px}
+#contrato .step.active{display:block}
+#contrato .step h2{font-size:1.5rem;font-weight:800;margin-bottom:4px}
+#contrato .step > p{color:var(--ink-soft);margin:0 0 14px}
+#contrato .field{margin-top:14px}
+#contrato .field label,#contrato .field .lab{display:block;font-weight:600;margin-bottom:6px}
+#contrato .field small{display:block;color:var(--ink-soft);font-size:.84rem;margin-top:4px}
+#contrato .in{width:100%;border:2px solid var(--line);border-radius:12px;padding:12px 14px;background:transparent;font-size:1.02rem}
+#contrato .in:focus{border-color:var(--anil);outline:none}
+#contrato .in.err{border-color:var(--bad)}
+#contrato .errmsg{color:var(--bad);font-size:.86rem;margin-top:4px;font-weight:600}
+#contrato .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#contrato .opts{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+#contrato .opt{padding:12px;border-radius:12px;border:2px solid var(--line);background:transparent;cursor:pointer;text-align:left;font-weight:600;line-height:1.3}
+#contrato .opt small{display:block;font-weight:400;color:var(--ink-soft);font-size:.8rem;margin-top:2px}
+#contrato .opt[aria-pressed="true"]{border-color:var(--anil);background:var(--anil-soft)}
+#contrato .checks{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+#contrato .check{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;border:2px solid var(--line);cursor:pointer;font-weight:500}
+#contrato .check input{width:18px;height:18px;accent-color:var(--anil)}
+#contrato .days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+#contrato .day{min-height:46px;border-radius:12px;border:2px solid var(--line);background:transparent;cursor:pointer;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.05rem}
+#contrato .day[aria-pressed="true"]{background:var(--sol);border-color:var(--sol);color:var(--sol-ink)}
+#contrato .note{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:.92rem}
+#contrato .note.warn{background:var(--warn-soft)}
+#contrato .note.ok{background:var(--ok-soft);color:var(--ok);font-weight:600}
+#contrato .note.bad{background:var(--bad-soft);color:var(--bad);font-weight:600}
+#contrato .nav-btns{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+#contrato .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 18px;border-radius:14px;font-weight:700;cursor:pointer;border:2px solid transparent;font-size:1rem;text-decoration:none}
+#contrato .btn-main{background:var(--anil);color:#fff;flex:1}
+#contrato .btn-ghost{background:transparent;border-color:var(--line)}
+@media (max-width:520px){#contrato .row2,#contrato .opts,#contrato .checks{grid-template-columns:1fr}}
+#contrato #result{display:none}
+#contrato #result.show{display:block}
+#contrato .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
+#contrato .actions .btn-main{grid-column:1/-1}
+#contrato .doc{background:#FFFFFF;color:#1d1d1d;border-radius:4px;padding:clamp(22px,6vw,56px);box-shadow:0 1px 0 #cfd5e6,0 20px 40px rgba(24,32,61,.16);font-family:"Source Serif 4",Georgia,serif;font-size:15px;line-height:1.7}
+#contrato .doc h3{font-family:"Source Serif 4",Georgia,serif;text-align:center;font-size:1.08rem;line-height:1.35;margin-bottom:18px}
+#contrato .doc h4{font-size:.98rem;margin:18px 0 4px}
+#contrato .doc p{margin:0 0 8px;text-align:justify;hyphens:auto}
+#contrato .doc .firmas{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+#contrato .doc .firmas div{border-top:1px solid #1d1d1d;padding-top:6px;font-size:.88rem}
+#contrato .disclaimer{color:var(--ink-soft);font-size:.86rem;margin:16px 0 40px}
+#contrato .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+#contrato .toast.show{opacity:1;transform:translate(-50%,0)}
+.tabs{display:flex;gap:6px;margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;width:max-content;max-width:100%}
+.tabs a{padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--ink-soft);font-weight:600;font-size:.92rem}
+.tabs a[aria-current="page"]{background:var(--anil);color:#fff}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.site-foot{padding-top:28px;padding-bottom:36px;color:var(--ink-soft);font-size:.86rem}
+.site-foot nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 14px}
+.site-foot nav a{color:var(--ink-soft)}
+.tabs{overflow-x:auto}
+.tabs a{white-space:nowrap}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<header class="wrap">
+  <a class="brand" href="#" aria-label="Cuentas Claras, inicio">
+    <span class="brand-mark" aria-hidden="true">✓</span>
+    <span>Cuentas Claras<small>Para pagar bien a quien trabaja en tu casa</small></span>
+  </a>
+  <nav class="tabs" aria-label="Herramientas"><a href="#calculadora" id="tCalc" aria-current="page">Pago por días</a><a href="prima.html">Prima</a><a href="#contrato" id="tCon">Contrato</a></nav>
+</header>
+
+<main>
+<div id="vCalc">
+<section class="wrap hero">
+  <h1>¿Cuánto se le paga a una empleada doméstica por días en 2026?</h1>
+  <p>Marca los días que va a tu casa y te mostramos el pago mínimo legal por día, la seguridad social por semanas, las prestaciones y lo que cuesta al mes tener todo en regla.</p>
+  <div class="stamp">Actualizado con el salario mínimo 2026 y la reforma laboral</div>
+</section>
+
+<section class="wrap tool" aria-label="Calculadora">
+  <div class="form">
+    <div class="q">
+      <h2>¿Qué días trabaja en tu casa?</h2>
+      <p class="hint">Toca los días de la semana en que va.</p>
+      <div class="days" id="days">
+        <button class="day" data-d="lu" aria-pressed="false">L<span>Lun</span></button>
+        <button class="day" data-d="ma" aria-pressed="true">M<span>Mar</span></button>
+        <button class="day" data-d="mi" aria-pressed="false">M<span>Mié</span></button>
+        <button class="day" data-d="ju" aria-pressed="false">J<span>Jue</span></button>
+        <button class="day" data-d="vi" aria-pressed="true">V<span>Vie</span></button>
+        <button class="day" data-d="sa" aria-pressed="false">S<span>Sáb</span></button>
+      </div>
+    </div>
+
+    <div class="q">
+      <h2>¿Cuántos días trabaja en el mes?</h2>
+      <p class="hint">Lo calculamos según los días de la semana. Ajústalo si este mes fueron más o menos.</p>
+      <div class="stepper">
+        <button type="button" id="minus" aria-label="Un día menos">−</button>
+        <output id="dm" class="num" aria-live="polite">9 días</output>
+        <button type="button" id="plus" aria-label="Un día más">+</button>
+        <button type="button" class="reset" id="auto" hidden>Volver al cálculo automático</button>
+      </div>
+    </div>
+
+    <div class="q">
+      <h2>¿Desde cuándo trabaja en tu casa?</h2>
+      <p class="hint">Con esta fecha calculamos cuánto le corresponde de prima, cesantías y vacaciones según el tiempo trabajado.</p>
+      <input class="date" type="date" id="inicio" aria-label="Fecha en que empezó a trabajar">
+    </div>
+
+    <div class="q">
+      <h2>¿Cuánto le pagas hoy por día?</h2>
+      <p class="hint">Opcional. Escríbelo y te decimos si cumples el mínimo legal.</p>
+      <label class="money"><b aria-hidden="true">$</b>
+        <input id="agreed" inputmode="numeric" autocomplete="off" placeholder="Por ejemplo 70.000" aria-label="Pago actual por día en pesos">
+      </label>
+    </div>
+
+    <div class="q">
+      <h2>¿Cómo tiene ella la salud?</h2>
+      <p class="hint">Esto cambia si tienes que pagarle salud o no.</p>
+      <div class="seg seg3" id="sisben">
+        <button type="button" data-v="si" aria-pressed="false">Por el Sisbén<small>Su EPS es subsidiada</small></button>
+        <button type="button" data-v="ben" aria-pressed="false">Como beneficiaria<small>En la EPS de un familiar</small></button>
+        <button type="button" data-v="no" aria-pressed="false">Ninguna de las dos<small>No tiene o paga ella misma</small></button>
+        <button type="button" data-v="nose" aria-pressed="true">No sé<small>Calculamos lo más seguro</small></button>
+      </div>
+      <div class="saludnote" id="saludNote" aria-live="polite"></div>
+      <details class="info">
+        <summary>¿Qué significa esto y cómo lo averiguo?</summary>
+        <p>En Colombia todos deben tener EPS, pero hay tres formas de estar afiliado:</p>
+        <p><strong>Por el Sisbén (régimen subsidiado):</strong> el Estado le paga la EPS porque tiene puntaje del Sisbén.</p>
+        <p><strong>Como beneficiaria:</strong> está afiliada en la EPS de su esposo, compañero o un hijo que trabaja, y no paga nada.</p>
+        <p><strong>Ninguna de las dos:</strong> paga ella misma su salud, o no tiene EPS.</p>
+        <p>Si trabaja 21 días o menos al mes y está en alguna de las dos primeras, <strong>no tienes que pagarle salud</strong>, solo pensión, caja de compensación y ARL. Si no, debes pagarle la salud completa sobre un salario mínimo.</p>
+        <p><strong>Cómo saberlo:</strong> pregúntale en qué EPS está y si es "subsidiado" o "contributivo". También puedes consultarlo con su número de cédula en la página de la ADRES, en la opción de consulta de afiliados (BDUA).</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="receipt-col">
+    <div class="verdict" id="verdict" role="status"></div>
+    <article class="receipt" id="receipt" aria-live="polite">
+      <div class="r-head"><h2>Tu recibo</h2><span id="rsub">2 días por semana</span></div>
+      <div id="rbody"></div>
+    </article>
+  </div>
+</section>
+
+<section class="explain">
+  <div class="wrap col">
+    <h2>Cómo se calcula el pago por día</h2>
+    <p>Una empleada que trabaja por días tiene los mismos derechos que cualquier trabajador, en proporción a lo que trabaja. El pago mínimo de cada día se arma con tres partes:</p>
+    <div class="formula num">
+      <div><span>Salario del día (mínimo ÷ 30)</span><strong>$58.364</strong></div>
+      <div><span>Dominical proporcional (1/6 del día)</span><strong>$9.727</strong></div>
+      <div><span>Auxilio de transporte (÷ 30)</span><strong>$8.303</strong></div>
+      <div><span><strong>Mínimo legal por día</strong></span><strong>$76.394</strong></div>
+    </div>
+    <p>El <strong>dominical proporcional</strong> es lo que más se olvida. Si no trabaja toda la semana, igual tiene derecho a que se le pague el descanso del domingo en proporción a los días que trabajó.</p>
+
+    <h2>Seguridad social por semanas</h2>
+    <p>Si trabaja menos de un mes completo y gana menos del mínimo mensual, se cotiza a pensión y caja de compensación por semanas, según los días trabajados en el mes:</p>
+    <div class="weeks">
+      <div><b>1</b><span>de 1 a 7 días</span></div>
+      <div><b>2</b><span>de 8 a 14 días</span></div>
+      <div><b>3</b><span>de 15 a 21 días</span></div>
+      <div><b>Mes</b><span>más de 21 días</span></div>
+    </div>
+    <p>Cada semana se cotiza sobre una cuarta parte del salario mínimo. La pensión es 16% (12% lo pagas tú y 4% ella), la caja de compensación es 4% a tu cargo, y la ARL se paga siempre por el mes completo, sin importar cuántos días trabaje.</p>
+
+    <h2 id="como-pagar">Cómo pagar la seguridad social, paso a paso</h2>
+    <p>La seguridad social se paga una vez al mes por internet, con una planilla llamada PILA. La primera vez toma una hora; después, unos 10 minutos al mes.</p>
+    <div class="pilabox"><h3>Tu caso, según la calculadora</h3><ul id="pilaResumen"></ul></div>
+    <ol class="steps">
+      <li><strong>Reúne sus datos</strong>Cédula, en qué EPS está y si es subsidiada o contributiva, y si ya tiene fondo de pensión.</li>
+      <li><strong>Afíliala a la ARL antes de que empiece</strong>Tú eliges la ARL (por ejemplo Positiva, Sura, Bolívar, Colmena u otra) y la afilias en riesgo I. Se hace por internet o en una oficina, como mínimo el día anterior a su primer día de trabajo.</li>
+      <li><strong>Afíliala a pensión y a caja de compensación</strong>Ella elige el fondo de pensión: Colpensiones o un fondo privado. Tú eliges la caja de compensación de tu ciudad y la inscribes a ella como tu trabajadora. Si le corresponde salud, regístrate como empleador en su EPS.</li>
+      <li><strong>Regístrate en un operador de PILA</strong>Son las páginas autorizadas para pagar, como Aportes en Línea, SOI, Mi Planilla o SuAporte. Te inscribes como persona natural empleadora de servicio doméstico.</li>
+      <li><strong>Haz la planilla tipo S cada mes</strong>Es la planilla de servicio doméstico. Escoges el tipo de cotizante que te mostramos arriba, escribes los días trabajados y la plataforma calcula los valores.</li>
+      <li><strong>Paga por PSE antes de tu fecha límite</strong>La fecha depende de los últimos dígitos de tu cédula y el operador te la muestra. Pagar tarde genera intereses de mora.</li>
+      <li><strong>Descuéntale su parte y guarda el comprobante</strong>De su pago descuentas el 4% de pensión (y el 4% de salud si aplica). Guarda cada comprobante: es tu prueba de que cumples.</li>
+    </ol>
+
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Si viene un solo día a la semana igual debo afiliarla?</summary><p>Sí. Desde el primer día de trabajo debe estar afiliada a ARL y cotizar pensión y caja de compensación por semanas. Con un día a la semana normalmente se cotiza una semana al mes.</p></details>
+    <details><summary>¿Qué pasa si trabaja para varias casas?</summary><p>Cada empleador paga lo que le corresponde por los días que ella va a su casa, incluida su propia seguridad social y sus prestaciones.</p></details>
+    <details><summary>¿Tiene derecho a prima si trabaja por días?</summary><p>Sí. La prima, las cesantías, los intereses sobre cesantías y las vacaciones se le deben en proporción a lo que gana. La prima se paga a más tardar el 30 de junio y el 20 de diciembre.</p></details>
+    <details><summary>¿Y si trabaja domingos o festivos?</summary><p>Desde el 1 de julio de 2026 el trabajo en domingo o festivo tiene un recargo del 90% sobre el valor del día. Esta calculadora no incluye esos días; pronto tendremos una para eso.</p></details>
+    <details><summary>¿Puedo pagarle todo junto en el día y olvidarme de las prestaciones?</summary><p>No. La ley no permite incluir la prima, las cesantías ni las vacaciones dentro del pago diario. Se pagan aparte, en sus fechas.</p></details>
+
+    <p style="margin-top:26px;font-size:.88rem">Valores 2026: salario mínimo $1.750.905 y auxilio de transporte $249.095. Basado en el Código Sustantivo del Trabajo, la Ley 50 de 1990 (dominical proporcional), el Decreto 1072 de 2015 (cotización por semanas) y la Ley 2466 de 2025. Los resultados son una guía; para casos especiales consulta con un contador o con el Ministerio del Trabajo.</p>
+  </div>
+</section>
+</div>
+<div id="contrato" class="wrap" hidden>
+<section class="hero">
+  <h1>Contrato de trabajo para empleada doméstica, listo en 5 minutos</h1>
+  <p>Responde unas preguntas y te armamos el contrato escrito con todo lo que exige la ley, por días o tiempo completo. Lo descargas en PDF, lo imprimes dos veces y lo firman.</p>
+  <div class="law"><strong>Desde la reforma laboral el contrato escrito es obligatorio</strong>, aunque ella vaya un solo día a la semana. Un acuerdo de palabra ya no es suficiente.</div>
+</section>
+
+<section class="card" id="wizard" aria-label="Datos del contrato">
+  <div class="progress" id="progress"></div>
+  <div class="steplabel" id="steplabel"></div>
+
+  <div class="step" data-step="1">
+    <h2>Tus datos</h2><p>Eres quien contrata, el empleador o empleadora.</p>
+    <div class="field"><label for="eNombre">Nombre completo</label><input class="in" id="eNombre" data-k="eNombre" autocomplete="name"></div>
+    <div class="row2">
+      <div class="field"><label for="eCedula">Número de cédula</label><input class="in" id="eCedula" data-k="eCedula" inputmode="numeric"></div>
+      <div class="field"><label for="eTel">Celular</label><input class="in" id="eTel" data-k="eTel" inputmode="tel"></div>
+    </div>
+    <div class="field"><label for="eDir">Dirección de tu casa</label><input class="in" id="eDir" data-k="eDir" placeholder="Calle 00 # 00-00, apto 000"></div>
+    <div class="field"><label for="ciudad">Ciudad</label><input class="in" id="ciudad" data-k="ciudad" placeholder="Por ejemplo Medellín"></div>
+  </div>
+
+  <div class="step" data-step="2">
+    <h2>Datos de ella</h2><p>La persona que va a trabajar en tu casa.</p>
+    <div class="field"><label for="tNombre">Nombre completo</label><input class="in" id="tNombre" data-k="tNombre"></div>
+    <div class="row2">
+      <div class="field"><label for="tCedula">Número de cédula</label><input class="in" id="tCedula" data-k="tCedula" inputmode="numeric"></div>
+      <div class="field"><label for="tTel">Celular</label><input class="in" id="tTel" data-k="tTel" inputmode="tel"></div>
+    </div>
+    <div class="field"><label for="tDir">Dirección donde vive</label><input class="in" id="tDir" data-k="tDir"><small>Si vive en tu casa, escribe tu misma dirección.</small></div>
+  </div>
+
+  <div class="step" data-step="3">
+    <h2>El trabajo</h2><p>Dónde trabaja y qué va a hacer.</p>
+    <div class="field"><span class="lab">¿Dónde va a trabajar?</span>
+      <label class="check"><input type="checkbox" id="mismaDir" checked> En la misma dirección de mi casa</label>
+      <input class="in" id="lugar" data-k="lugar" placeholder="Dirección del lugar de trabajo" style="margin-top:8px" hidden>
+    </div>
+    <div class="field"><span class="lab">¿Vive en tu casa?</span>
+      <div class="opts" data-group="modalidad">
+        <button type="button" class="opt" data-v="externa" aria-pressed="true">No, llega y se va<small>Trabajadora externa</small></button>
+        <button type="button" class="opt" data-v="interna" aria-pressed="false">Sí, vive en la casa<small>Trabajadora interna</small></button>
+      </div>
+    </div>
+    <div class="field"><span class="lab">¿Qué labores va a hacer?</span>
+      <div class="checks" id="funciones">
+        <label class="check"><input type="checkbox" value="aseo general de la vivienda" checked> Aseo</label>
+        <label class="check"><input type="checkbox" value="preparación de alimentos" checked> Cocina</label>
+        <label class="check"><input type="checkbox" value="lavado y planchado de ropa" checked> Lavado y planchado</label>
+        <label class="check"><input type="checkbox" value="cuidado y acompañamiento de niños"> Cuidado de niños</label>
+        <label class="check"><input type="checkbox" value="cuidado y acompañamiento de personas adultas mayores"> Cuidado de adultos mayores</label>
+        <label class="check"><input type="checkbox" value="cuidado de mascotas"> Cuidado de mascotas</label>
+      </div>
+      <input class="in" id="otras" data-k="otras" placeholder="Otras labores (opcional)" style="margin-top:8px">
+    </div>
+  </div>
+
+  <div class="step" data-step="4">
+    <h2>Días y horario</h2><p>La ley exige que el contrato diga exactamente cuándo trabaja.</p>
+    <div class="field"><span class="lab">¿Cómo va a trabajar?</span>
+      <div class="opts" data-group="tipo">
+        <button type="button" class="opt" data-v="dias" aria-pressed="true">Por días<small>Algunos días a la semana</small></button>
+        <button type="button" class="opt" data-v="completo" aria-pressed="false">Tiempo completo<small>Toda la semana, salario mensual</small></button>
+      </div>
+    </div>
+    <div class="field"><span class="lab">¿Qué días?</span>
+      <div class="days" id="dias">
+        <button type="button" class="day" data-d="lunes" aria-pressed="false">L</button>
+        <button type="button" class="day" data-d="martes" aria-pressed="true">M</button>
+        <button type="button" class="day" data-d="miércoles" aria-pressed="false">M</button>
+        <button type="button" class="day" data-d="jueves" aria-pressed="false">J</button>
+        <button type="button" class="day" data-d="viernes" aria-pressed="true">V</button>
+        <button type="button" class="day" data-d="sábado" aria-pressed="false">S</button>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="hIn">Hora de entrada</label><input class="in" type="time" id="hIn" data-k="hIn" value="08:00"></div>
+      <div class="field"><label for="hOut">Hora de salida</label><input class="in" type="time" id="hOut" data-k="hOut" value="16:00"></div>
+    </div>
+    <div class="field"><label for="desc">Tiempo para almorzar o descansar (minutos)</label><input class="in" id="desc" data-k="desc" inputmode="numeric" value="60"><small>Ese tiempo no se cuenta como trabajado.</small></div>
+    <div id="horasNote"></div>
+  </div>
+
+  <div class="step" data-step="5">
+    <h2>El pago</h2><p>Cuánto, cada cuánto y cómo le vas a pagar.</p>
+    <div class="field"><label for="valor" id="valorLab">Pago por cada día trabajado</label>
+      <input class="in" id="valor" data-k="valor" inputmode="numeric">
+      <small id="valorHelp"></small>
+    </div>
+    <div id="pagoNote"></div>
+    <div class="field"><span class="lab">¿Cada cuánto le pagas?</span>
+      <div class="opts" data-group="periodo">
+        <button type="button" class="opt" data-v="semanal" aria-pressed="true">Cada semana</button>
+        <button type="button" class="opt" data-v="quincenal" aria-pressed="false">Cada quincena</button>
+        <button type="button" class="opt" data-v="mensual" aria-pressed="false">Cada mes</button>
+      </div>
+    </div>
+    <div class="field"><span class="lab">¿Cómo le pagas?</span>
+      <div class="opts" data-group="medio">
+        <button type="button" class="opt" data-v="en efectivo" aria-pressed="false">Efectivo</button>
+        <button type="button" class="opt" data-v="por transferencia bancaria o billetera digital (Nequi, Daviplata u otra)" aria-pressed="true">Transferencia o Nequi</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" data-step="6">
+    <h2>Duración</h2><p>Desde cuándo y hasta cuándo.</p>
+    <div class="field"><span class="lab">Tipo de contrato</span>
+      <div class="opts" data-group="duracion">
+        <button type="button" class="opt" data-v="indefinido" aria-pressed="true">Indefinido<small>Sin fecha de terminación. Es la regla general.</small></button>
+        <button type="button" class="opt" data-v="fijo" aria-pressed="false">A término fijo<small>Con fecha de terminación</small></button>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="fIni">Fecha de inicio</label><input class="in" type="date" id="fIni" data-k="fIni"></div>
+      <div class="field" id="finWrap" hidden><label for="fFin">Fecha de terminación</label><input class="in" type="date" id="fFin" data-k="fFin"></div>
+    </div>
+    <div class="field"><label class="check"><input type="checkbox" id="prueba" checked> Incluir período de prueba de 15 días</label></div>
+  </div>
+
+  <div class="nav-btns">
+    <button type="button" class="btn btn-ghost" id="back">Atrás</button>
+    <button type="button" class="btn btn-main" id="next">Siguiente</button>
+  </div>
+</section>
+
+<section id="result" aria-label="Contrato generado">
+  <div class="actions">
+    <button type="button" class="btn btn-main" id="pdf">Descargar contrato en PDF</button>
+    <button type="button" class="btn btn-ghost" id="cCopy">Copiar texto</button>
+    <button type="button" class="btn btn-ghost" id="edit">Editar datos</button>
+  </div>
+  <article class="doc" id="doc"></article>
+  <p class="disclaimer">Este formato incluye el contenido mínimo que exige la ley para el contrato de trabajo doméstico: identificación de las partes, lugar, labores, horario, salario y duración. No necesita autenticarse en notaría: basta con que ambas partes firmen dos copias y cada una guarde la suya. Es una guía general; para situaciones especiales consulta con un abogado o con el Ministerio del Trabajo.</p>
+</section>
+</div>
+</main>
+
+<footer class="wrap site-foot">
+  <nav aria-label="Información del sitio"><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Política de privacidad</a><a href="terminos.html">Términos de uso</a></nav>
+  © 2026 Cuentas Claras. Información de referencia basada en la ley colombiana; no reemplaza la asesoría de un abogado o contador.
+</footer>
+
+<div class="toast" id="toast" role="status">Resultado copiado</div>
+
+<script>
+(function(){
+  const SMMLV=1750905, AUX=249095, ARL=0.00522;
+  const salDia=SMMLV/30, auxDia=AUX/30, domDia=salDia/6, minDia=salDia+domDia+auxDia;
+  const st={days:new Set(["ma","vi"]),manual:null,agreed:0,salud:"nose",inicio:null};
+  const HOY=new Date(); HOY.setHours(0,0,0,0);
+  const MES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  const MESL=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const D=(y,m,d)=>new Date(y,m,d);
+  const corto=f=>`${f.getDate()} de ${MESL[f.getMonth()]}`;
+  function d360(a,b){ // días comerciales entre a y b, inclusivo
+    if(b<a)return 0;
+    return (b.getFullYear()-a.getFullYear())*360+(b.getMonth()-a.getMonth())*30+(Math.min(b.getDate(),30)-Math.min(a.getDate(),30))+1;
+  }
+  const maxD=(a,b)=>a>b?a:b;
+  function inicio(){return st.inicio||D(HOY.getFullYear(),0,1)}
+  function calendario(r){
+    const M=r.salMes+r.auxMes, Sal=r.salMes, ini=inicio(), Y=HOY.getFullYear(), ev=[];
+    const per=(a,b)=>{const f=maxD(a,ini);return {f,b,d:d360(f,b)}};
+    for(const y of [Y-1,Y,Y+1]){
+      // primas
+      [[D(y,0,1),D(y,5,30),D(y,5,30),"junio"],[D(y,6,1),D(y,11,31),D(y,11,20),"diciembre"]].forEach(([a,b,pay,nom])=>{
+        const p=per(a,b); if(p.d<=0)return;
+        ev.push({fecha:pay,t:`Prima de ${nom}`,v:M*p.d/360,x:`Se le paga a ella. Corresponde a ${p.d===180?"todo el semestre":p.d+" días de contrato, del "+corto(p.f)+" al "+corto(b)}.`});
+      });
+      // cesantías del año y
+      const p=per(D(y,0,1),D(y,11,31)); if(p.d>0){
+        const ces=M*p.d/360;
+        ev.push({fecha:D(y+1,0,31),t:`Intereses de cesantías ${y}`,v:ces*0.12*p.d/360,x:`Se le pagan a ella directamente: 12% anual sobre sus cesantías de ${y}.`});
+        ev.push({fecha:D(y+1,1,14),t:`Cesantías ${y}`,v:ces,x:`Se consignan en su fondo de cesantías, no se le entregan en mano. Por ${p.d===360?"todo el año":p.d+" días de contrato"}.`});
+      }
+    }
+    // vacaciones: próximo aniversario
+    let an=D(ini.getFullYear()+1,ini.getMonth(),ini.getDate()); while(an<HOY)an=D(an.getFullYear()+1,an.getMonth(),an.getDate());
+    ev.push({fecha:an,t:"Vacaciones",v:Sal/2,x:"Al cumplir cada año tiene derecho a 15 días hábiles de descanso pagados. Si el contrato termina antes, se pagan en proporción."});
+    const lim=D(Y+1,HOY.getMonth()+1,HOY.getDate());
+    return ev.filter(e=>e.fecha>=HOY&&e.fecha<=lim&&e.fecha>=ini).sort((a,b)=>a.fecha-b.fecha);
+  }
+  const $=id=>document.getElementById(id);
+  const fmt=n=>"$"+Math.round(n).toLocaleString("es-CO");
+  const autoDays=()=>Math.round(st.days.size*52/12);
+  const diasMes=()=>st.manual!=null?st.manual:autoDays();
+  let lastBig="";
+
+  function calc(sub){
+    const sisben=sub!==undefined?sub:(st.salud==="si"||st.salud==="ben");
+    const dm=diasMes();
+    const pagoDia=Math.max(st.agreed||0,minDia);
+    const salPorDia=pagoDia-auxDia;
+    const salMes=salPorDia*dm, auxMes=auxDia*dm;
+    const full=dm>21||salMes>=SMMLV;
+    const semanas=full?4:(dm<=7?1:dm<=14?2:3);
+    const baseSS=full?Math.max(salMes,SMMLV):semanas*SMMLV/4;
+    const pensEmp=baseSS*.12, pensTra=baseSS*.04, caja=baseSS*.04, arl=SMMLV*ARL;
+    let saludEmp=0, saludTra=0;
+    if(full||!sisben){const b=Math.max(salMes,SMMLV);saludEmp=b*.085;saludTra=b*.04;}
+    const baseP=salMes+auxMes;
+    const prima=baseP/12, ces=baseP/12, intc=ces*.12, vac=salMes/24;
+    const ssEmp=pensEmp+caja+arl+saludEmp, prov=prima+ces+intc+vac;
+    return {dm,pagoDia,salMes,auxMes,full,semanas,pensEmp,pensTra,caja,arl,saludEmp,saludTra,ssEmp,prima,ces,intc,vac,prov,
+      costo:salMes+auxMes+ssEmp+prov, neto:salMes+auxMes-pensTra-saludTra, primaDic:baseP/2};
+  }
+
+  function row(a,b,cls){return `<li class="${cls||""}"><span>${a}</span><span class="num">${b}</span></li>`}
+
+  function saludNote(){
+    const box=$("saludNote"), n=st.days.size;
+    if(!n&&st.manual==null){box.className="saludnote";box.innerHTML="<p>Marca primero los días que trabaja.</p>";pila(null);return}
+    const r=calc(), dm=r.dm;
+    const conSalud=calc(false), sinSalud=calc(true);
+    const sTot=conSalud.saludEmp+conSalud.saludTra;
+    const det=`<ul><li><span>Tú pagas (8,5%)</span><strong class="num">${fmt(conSalud.saludEmp)}</strong></li><li><span>Ella aporta (4%), se lo descuentas</span><strong class="num">${fmt(conSalud.saludTra)}</strong></li></ul>`;
+    let cls,html;
+    if(r.full){
+      cls="yes";html=`<div class="t">Sí debes pagarle salud</div><p>Trabaja ${dm} días al mes, más de 21, así que la ley la considera de tiempo completo y debe estar en el régimen contributivo, sin importar si tiene Sisbén. Son ${fmt(sTot)} al mes:</p>${det}`;
+    } else if(st.salud==="si"||st.salud==="ben"){
+      cls="no";html=`<div class="t">No tienes que pagarle salud</div><p>Como trabaja ${dm} días al mes (21 o menos) y ya tiene salud ${st.salud==="si"?"por el Sisbén":"como beneficiaria"}, puede quedarse así. Tú solo pagas pensión, caja de compensación y ARL: <strong class="num">${fmt(sinSalud.ssEmp)}</strong> al mes.</p>`;
+    } else if(st.salud==="no"){
+      cls="yes";html=`<div class="t">Sí debes pagarle salud</div><p>Como no tiene Sisbén ni es beneficiaria, debes afiliarla a una EPS y pagar la salud completa sobre un salario mínimo, aunque trabaje por días. Son ${fmt(sTot)} al mes:</p>${det}`;
+    } else {
+      cls="maybe";html=`<div class="t">Depende de su EPS</div><p>Si tiene Sisbén o es beneficiaria, no pagas salud. Si no, serían ${fmt(sTot)} al mes (${fmt(conSalud.saludEmp)} tú y ${fmt(conSalud.saludTra)} ella). Mientras averiguas, el recibo incluye la salud para que no te lleves sorpresas. Abajo te explicamos cómo saberlo.</p>`;
+    }
+    if(box.dataset.k!==cls+st.salud+dm){box.classList.remove("flash");void box.offsetWidth;box.classList.add("flash");box.dataset.k=cls+st.salud+dm}
+    box.className="saludnote "+cls+" flash";box.innerHTML=html;
+    pila(r);
+  }
+  function pila(r){
+    const ul=$("pilaResumen");if(!ul)return;
+    if(!r){ul.innerHTML="<li><span>Marca los días en la calculadora para ver tu caso.</span></li>";return}
+    const subs=(st.salud==="si"||st.salud==="ben")&&!r.full;
+    const tipo=r.full||!subs?"2 · Servicio doméstico":"51 · Trabajador de tiempo parcial";
+    ul.innerHTML=[
+      ["Planilla","Tipo S (servicio doméstico)"],
+      ["Tipo de cotizante",tipo.replace(" · "," – ")],
+      ["Días trabajados a reportar",r.dm+" días"],
+      ["Pensión y caja",r.full?"Mes completo":`${r.semanas} ${r.semanas===1?"semana":"semanas"}`],
+      ["ARL","Siempre 30 días, riesgo I"],
+      ["Salud",r.saludEmp?"Sí, régimen contributivo":"No, conserva su Sisbén o es beneficiaria"],
+      ["Total aproximado de la planilla",fmt(r.ssEmp+r.pensTra+r.saludTra)],
+      ["De ese total, lo que le descuentas a ella",fmt(r.pensTra+r.saludTra)]
+    ].map(([a,b])=>`<li><span>${a}</span><strong class="num">${b}</strong></li>`).join("");
+    if(st.salud==="nose"&&!r.full)ul.innerHTML+=`<li><span>Si resulta que tiene Sisbén, el tipo de cotizante sería 51 y no pagarías salud.</span></li>`;
+  }
+  function render(){
+    const n=st.days.size;
+    $("dm").textContent=diasMes()+(diasMes()===1?" día":" días");
+    $("auto").hidden=st.manual==null;
+    $("rsub").textContent=n?`${n} ${n===1?"día":"días"} por semana`:"Sin días marcados";
+    const v=$("verdict");
+    saludNote();
+    if(!n&&st.manual==null){
+      $("rbody").innerHTML=`<p class="empty">Toca arriba los días en que trabaja y aquí aparece su pago completo.</p>`;
+      v.className="verdict";return;
+    }
+    const r=calc();
+    const ss=[row("Pensión (tu parte, 12%)",fmt(r.pensEmp),"sub"),row("Caja de compensación (4%)",fmt(r.caja),"sub"),row("ARL riesgo I, mes completo",fmt(r.arl),"sub")];
+    if(r.saludEmp) ss.push(row("Salud (tu parte, 8,5%)",fmt(r.saludEmp),"sub"));
+    const big=fmt(minDia);
+    const ev=calendario(r);
+    const mensual=r.salMes+r.auxMes+r.ssEmp;
+    const cal=ev.map((e,k)=>`<li class="${k===0?"soon":""}"><div class="d"><b>${e.fecha.getDate()}</b><span>${MES[e.fecha.getMonth()]} ${String(e.fecha.getFullYear()).slice(2)}</span></div><div class="w"><b>${e.t}</b><span>${e.x}</span></div><div class="m num">${fmt(e.v)}</div></li>`).join("");
+    $("rbody").innerHTML=`
+      <div class="big"><div class="label">Mínimo legal por día</div><div class="value num" id="bigv">${big}</div></div>
+      <ul class="rows">
+        ${row("Salario del día",fmt(salDia))}${row("Dominical proporcional",fmt(domDia))}${row("Auxilio de transporte",fmt(auxDia))}
+      </ul>
+      <div class="block"><h3>Cada mes <small>(${r.dm} días trabajados)</small></h3>
+        <ul class="rows">
+          ${row("Pago a ella por sus días",fmt(r.salMes+r.auxMes))}
+          ${row("Seguridad social (planilla PILA)",fmt(r.ssEmp))}${ss.join("")}
+        </ul>
+      </div>
+      <div class="total"><div class="label">Lo que pagas cada mes</div><div class="value num">${fmt(mensual)}</div></div>
+      <ul class="rows" style="margin-top:10px">${row("Ella recibe en mano (ya descontado su 4% de pensión"+(r.saludTra?" y 4% de salud)":")"),fmt(r.neto))}</ul>
+      <div class="block"><h3>Próximas fechas de pago</h3>
+        <ul class="cal">${cal||'<li><div class="w"><span>No hay pagos adicionales en los próximos 12 meses.</span></div></li>'}</ul>
+        <p style="margin:8px 0 0;font-size:.8rem;color:var(--ink-soft)">Valores calculados con el tiempo trabajado desde el ${corto(inicio())} de ${inicio().getFullYear()}, suponiendo que sigue trabajando igual.</p>
+      </div>
+      <a class="cta" href="#como-pagar" style="border-color:var(--line)"><b>¿Cómo se paga la seguridad social?</b><span>Mira el paso a paso con los datos de tu caso.</span></a>
+      <a class="cta" href="#contrato"><b>Haz su contrato escrito gratis</b><span>Es obligatorio desde la reforma laboral, aunque vaya un solo día.</span></a>
+      <div class="actions"><a class="btn btn-wa" id="wa" target="_blank" rel="noopener">Enviar por WhatsApp</a><button class="btn btn-ghost" id="copy" type="button">Copiar resultado</button></div>`;
+    if(big!==lastBig){const b=$("bigv");b.classList.add("pop");lastBig=big;}
+    // verdict
+    if(st.agreed>0){
+      const diff=st.agreed-minDia;
+      if(diff<-0.5){v.className="verdict show bad";v.innerHTML=`Le estás pagando ${fmt(-diff)} menos por día de lo que dice la ley<p>En un mes de ${r.dm} días son ${fmt(-diff*r.dm)} por debajo del mínimo.</p>`;}
+      else{v.className="verdict show ok";v.innerHTML=`Cumples el mínimo legal por día<p>Pagas ${fmt(diff)} por encima del mínimo. Revisa que también estés al día con la seguridad social y las prestaciones.</p>`;}
+    } else v.className="verdict";
+    const txt=`Pago de empleada doméstica por días (Colombia 2026)\n${n} días por semana, ${r.dm} días en el mes\nMínimo legal por día: ${big}\nPago a ella en el mes: ${fmt(r.salMes+r.auxMes)}\nSeguridad social: ${fmt(r.ssEmp)}\nTotal cada mes: ${fmt(mensual)}\n\nPróximas fechas:\n${ev.map(e=>`${corto(e.fecha)}: ${e.t} ${fmt(e.v)}`).join("\n")}\n\nCalcula el tuyo gratis: ${location.origin+location.pathname}`;
+    $("wa").href="https://wa.me/?text="+encodeURIComponent(txt);
+    $("copy").onclick=()=>{
+      const done=()=>{const t=$("toast");t.textContent="Resultado copiado";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1600)};
+      try{navigator.clipboard.writeText(txt).then(done,()=>{})}catch(e){}
+    };
+  }
+
+  $("days").addEventListener("click",e=>{
+    const b=e.target.closest(".day");if(!b)return;
+    const d=b.dataset.d;
+    if(st.days.has(d))st.days.delete(d);else st.days.add(d);
+    b.setAttribute("aria-pressed",st.days.has(d));
+    st.manual=null;render();
+  });
+  $("inicio").value=`${HOY.getFullYear()}-01-01`;
+  $("inicio").addEventListener("change",e=>{const v=e.target.value;if(v){const[a,b,c]=v.split("-").map(Number);st.inicio=D(a,b-1,c)}else st.inicio=null;render()});
+  $("minus").onclick=()=>{st.manual=Math.max(1,diasMes()-1);render()};
+  $("plus").onclick=()=>{st.manual=Math.min(30,diasMes()+1);render()};
+  $("auto").onclick=()=>{st.manual=null;render()};
+  $("agreed").addEventListener("input",e=>{
+    const raw=e.target.value.replace(/\D/g,"").slice(0,9);
+    st.agreed=raw?parseInt(raw,10):0;
+    e.target.value=raw?parseInt(raw,10).toLocaleString("es-CO"):"";
+    render();
+  });
+  $("sisben").addEventListener("click",e=>{
+    const b=e.target.closest("button");if(!b)return;
+    st.salud=b.dataset.v;
+    [...$("sisben").children].forEach(x=>x.setAttribute("aria-pressed",x===b));
+    render();
+  });
+  window.__calcState=()=>({days:[...st.days],valor:Math.max(st.agreed||0,minDia)});
+  render();
+})();
+</script>
+
+<script>
+(function(){
+  const SMMLV=1750905, AUX=249095;
+  const DIA_EXT=Math.round(SMMLV/30*7/6+AUX/30); // 76.394
+  const DIA_INT=Math.round(SMMLV/30*7/6);        // 68.091
+  const $=id=>document.getElementById(id);
+  const fmt=n=>"$"+Math.round(n).toLocaleString("es-CO");
+  const S={modalidad:"externa",tipo:"dias",periodo:"semanal",medio:"por transferencia bancaria o billetera digital (Nequi, Daviplata u otra)",duracion:"indefinido",dias:new Set(["martes","viernes"])};
+  const ORDER=["lunes","martes","miércoles","jueves","viernes","sábado"];
+  let step=1; const TOTAL=6;
+  const today=new Date(); $("fIni").value=today.toISOString().slice(0,10);
+
+  // progress
+  $("progress").innerHTML=Array.from({length:TOTAL},()=>"<i></i>").join("");
+  function show(){
+    document.querySelectorAll(".step").forEach(s=>s.classList.toggle("active",+s.dataset.step===step));
+    [...$("progress").children].forEach((b,i)=>b.classList.toggle("on",i<step));
+    $("steplabel").textContent=`Paso ${step} de ${TOTAL}`;
+    $("back").style.visibility=step===1?"hidden":"visible";
+    $("next").textContent=step===TOTAL?"Generar contrato":"Siguiente";
+    if(step===4)horas(); if(step===5)pagoSetup();
+  }
+
+  // option groups
+  document.querySelectorAll("[data-group]").forEach(g=>g.addEventListener("click",e=>{
+    const b=e.target.closest(".opt");if(!b)return;
+    S[g.dataset.group]=b.dataset.v;
+    [...g.children].forEach(x=>x.setAttribute("aria-pressed",x===b));
+    if(g.dataset.group==="duracion")$("finWrap").hidden=S.duracion!=="fijo";
+    if(g.dataset.group==="tipo"){
+      if(S.tipo==="completo"&&S.dias.size<5){["lunes","martes","miércoles","jueves","viernes"].forEach(d=>S.dias.add(d));syncDays();}
+      horas();
+    }
+  }));
+  function syncDays(){[...$("dias").children].forEach(b=>b.setAttribute("aria-pressed",S.dias.has(b.dataset.d)))}
+  $("dias").addEventListener("click",e=>{const b=e.target.closest(".day");if(!b)return;const d=b.dataset.d;S.dias.has(d)?S.dias.delete(d):S.dias.add(d);syncDays();horas()});
+  $("mismaDir").addEventListener("change",e=>{$("lugar").hidden=e.target.checked});
+  ["hIn","hOut","desc"].forEach(id=>$(id).addEventListener("input",horas));
+
+  function mins(t){if(!t)return null;const[h,m]=t.split(":").map(Number);return h*60+m}
+  function horasDia(){
+    const a=mins($("hIn").value),b=mins($("hOut").value),d=parseInt($("desc").value||"0",10)||0;
+    if(a==null||b==null||b<=a)return null;return (b-a-d)/60;
+  }
+  function horas(){
+    const h=horasDia(),n=S.dias.size,box=$("horasNote");
+    if(h==null){box.innerHTML=`<div class="note bad">La hora de salida debe ser después de la hora de entrada.</div>`;return}
+    const sem=h*n; let msg=`<div class="note ok">${h.toLocaleString("es-CO",{maximumFractionDigits:1})} horas al día, ${sem.toLocaleString("es-CO",{maximumFractionDigits:1})} horas a la semana.</div>`;
+    if(h>8)msg+=`<div class="note warn">Son más de 8 horas al día. Desde la reforma laboral el trabajo doméstico tiene la misma jornada máxima que cualquier trabajo, y lo que pase de ese límite se paga como horas extra.</div>`;
+    if(sem>42)msg+=`<div class="note warn">Pasa de 42 horas a la semana, que es la jornada máxima legal desde el 15 de julio de 2026. Ajusta el horario o paga horas extra.</div>`;
+    if(mins($("hOut").value)>19*60)msg+=`<div class="note warn">Termina después de las 7:00 p. m. Desde las 7 de la noche el trabajo es nocturno y tiene un recargo del 35%.</div>`;
+    box.innerHTML=msg;
+  }
+
+  function pagoSetup(){
+    const dias=S.tipo==="dias", ext=S.modalidad==="externa";
+    $("valorLab").textContent=dias?"Pago por cada día trabajado":"Salario mensual";
+    const min=dias?(ext?DIA_EXT:DIA_INT):SMMLV;
+    if(!$("valor").value)$("valor").value=min.toLocaleString("es-CO");
+    $("valorHelp").textContent=dias
+      ? (ext?`Mínimo legal 2026: ${fmt(DIA_EXT)} por día. Incluye salario, dominical proporcional y auxilio de transporte.`:`Mínimo legal 2026: ${fmt(DIA_INT)} por día (salario y dominical proporcional; quien vive en la casa no recibe auxilio de transporte).`)
+      : (ext?`Mínimo legal 2026: ${fmt(SMMLV)}. Aparte se suma el auxilio de transporte de ${fmt(AUX)}.`:`Mínimo legal 2026: ${fmt(SMMLV)}.`);
+    checkPago();
+  }
+  function valorNum(){return parseInt(($("valor").value||"").replace(/\D/g,""),10)||0}
+  function minPago(){return S.tipo==="dias"?(S.modalidad==="externa"?DIA_EXT:DIA_INT):SMMLV}
+  function checkPago(){
+    const v=valorNum(),m=minPago(),box=$("pagoNote");
+    if(!v){box.innerHTML="";return true}
+    if(v<m){box.innerHTML=`<div class="note bad">Está ${fmt(m-v)} por debajo del mínimo legal. El contrato no puede tener un salario menor.</div>`;return false}
+    box.innerHTML=`<div class="note ok">Cumple el mínimo legal.</div>`;return true;
+  }
+  $("valor").addEventListener("input",e=>{const r=e.target.value.replace(/\D/g,"").slice(0,9);e.target.value=r?parseInt(r,10).toLocaleString("es-CO"):"";checkPago()});
+
+  // validation
+  function req(ids){
+    let ok=true;
+    ids.forEach(id=>{const el=$(id);const bad=!el.value.trim();el.classList.toggle("err",bad);
+      let m=el.parentElement.querySelector(".errmsg");
+      if(bad){if(!m){m=document.createElement("div");m.className="errmsg";el.after(m)}m.textContent="Este dato es necesario para el contrato.";ok=false}
+      else if(m)m.remove();});
+    return ok;
+  }
+  function validate(){
+    if(step===1)return req(["eNombre","eCedula","eDir","ciudad"]);
+    if(step===2)return req(["tNombre","tCedula","tDir"]);
+    if(step===3){
+      if(!$("mismaDir").checked&&!req(["lugar"]))return false;
+      if(!funciones().length&&!$("otras").value.trim()){toast("Elige al menos una labor");return false}
+      return true;
+    }
+    if(step===4){if(!S.dias.size){toast("Marca al menos un día");return false}return horasDia()!=null}
+    if(step===5){if(!valorNum()){toast("Escribe el valor del pago");return false}return checkPago()}
+    if(step===6){
+      if(!req(["fIni"]))return false;
+      if(S.duracion==="fijo"){
+        if(!req(["fFin"]))return false;
+        if($("fFin").value<=$("fIni").value){toast("La fecha de terminación debe ser después del inicio");return false}
+      }
+      return true;
+    }
+    return true;
+  }
+  $("next").onclick=()=>{
+    if(!validate())return;
+    if(step<TOTAL){step++;show();$("wizard").scrollIntoView({behavior:"smooth",block:"start"});}
+    else build();
+  };
+  $("back").onclick=()=>{if(step>1){step--;show()}};
+  $("edit").onclick=()=>{$("result").classList.remove("show");$("wizard").hidden=false;$("wizard").scrollIntoView({behavior:"smooth"})};
+
+  function funciones(){return [...$("funciones").querySelectorAll("input:checked")].map(i=>i.value)}
+  function listaES(a){return a.length<=1?a.join(""):a.slice(0,-1).join(", ")+" y "+a[a.length-1]}
+  const MESES=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  function fecha(iso){const[y,m,d]=iso.split("-").map(Number);return `${d} de ${MESES[m-1]} de ${y}`}
+  function hora(t){let[h,m]=t.split(":").map(Number);const ap=h<12?"a. m.":"p. m.";h=h%12||12;return `${h}:${String(m).padStart(2,"0")} ${ap}`}
+  const v=id=>$(id).value.trim();
+
+  function clauses(){
+    const ext=S.modalidad==="externa", dias=S.tipo==="dias";
+    const lugar=$("mismaDir").checked?v("eDir"):v("lugar");
+    const f=funciones(); if(v("otras"))f.push(v("otras"));
+    const diasTxt=listaES(ORDER.filter(d=>S.dias.has(d)));
+    const h=horasDia(); const hs=h.toLocaleString("es-CO",{maximumFractionDigits:1});
+    const val=valorNum();
+    const T=[];
+    T.push(["",`Entre ${v("eNombre")}, mayor de edad, identificado(a) con cédula de ciudadanía número ${v("eCedula")}, domiciliado(a) en ${v("eDir")}, ${v("ciudad")}${v("eTel")?", celular "+v("eTel"):""}, quien en adelante se denominará EL EMPLEADOR, y ${v("tNombre")}, mayor de edad, identificada con cédula de ciudadanía número ${v("tCedula")}, domiciliada en ${v("tDir")}${v("tTel")?", celular "+v("tTel"):""}, quien en adelante se denominará LA TRABAJADORA, se celebra el presente contrato de trabajo doméstico, que se rige por el Código Sustantivo del Trabajo, la Ley 2466 de 2025, sus decretos reglamentarios y las siguientes cláusulas:`]);
+    T.push(["PRIMERA. Objeto y labores",`LA TRABAJADORA prestará sus servicios personales en el hogar de EL EMPLEADOR, ubicado en ${lugar}, ${v("ciudad")}, realizando las siguientes labores: ${listaES(f)}, así como las demás tareas propias del servicio doméstico que sean afines a estas. Cualquier labor distinta deberá acordarse previamente entre las partes.`]);
+    T.push(["SEGUNDA. Modalidad",ext?`LA TRABAJADORA prestará el servicio como trabajadora externa, es decir, no residirá en el lugar de trabajo.`:`LA TRABAJADORA prestará el servicio como trabajadora interna, residiendo en el lugar de trabajo. EL EMPLEADOR le garantizará una habitación digna y privada, alimentación adecuada y el respeto de sus tiempos de descanso, sin que su permanencia en la vivienda implique disponibilidad fuera de la jornada pactada.`]);
+    T.push(["TERCERA. Jornada y horario",`LA TRABAJADORA laborará ${dias?"por días, ":""}los días ${diasTxt}, en horario de ${hora(v("hIn"))} a ${hora(v("hOut"))}, con ${parseInt(v("desc")||"0",10)||0} minutos de descanso dentro de la jornada, para un total aproximado de ${hs} horas diarias. La jornada no excederá la máxima legal vigente. El trabajo suplementario, el nocturno y el realizado en domingos o festivos solo se prestará por acuerdo entre las partes y se pagará con los recargos de ley. EL EMPLEADOR llevará registro del tiempo efectivamente trabajado.`]);
+    let sal;
+    if(dias){
+      const auxC=ext?Math.round(AUX/30):0, salT=val-auxC, salC=Math.round(salT*6/7), domC=salT-salC;
+      sal=`EL EMPLEADOR pagará a LA TRABAJADORA, por cada día efectivamente trabajado, la suma total de ${fmt(val)}, discriminada así: a) salario del día: ${fmt(salC)}; b) remuneración proporcional del descanso dominical, conforme al artículo 26 de la Ley 50 de 1990: ${fmt(domC)}${ext?`; c) auxilio de transporte proporcional: ${fmt(auxC)}, que no constituye salario para efectos de los aportes a seguridad social`:""}. Ninguno de estos valores es inferior al mínimo legal vigente.`;
+    } else {
+      sal=`EL EMPLEADOR pagará a LA TRABAJADORA un salario mensual de ${fmt(val)}, que incluye la remuneración de los días de descanso obligatorio${ext&&val<=2*SMMLV?`. Adicionalmente, pagará el auxilio de transporte legal vigente, que para 2026 es de ${fmt(AUX)} mensuales`:""}.`;
+    }
+    sal+=` El pago se hará de forma ${S.periodo} ${S.medio}, y en cada pago EL EMPLEADOR entregará un comprobante con los días trabajados y los valores pagados por cada concepto. Las prestaciones sociales, las vacaciones y los demás derechos laborales no están incluidos en estos valores y se pagarán por separado, en las fechas que señala la ley. El salario se ajustará cada año como mínimo en el mismo porcentaje del salario mínimo legal.`;
+    T.push(["CUARTA. Salario y forma de pago",sal]);
+    T.push(["QUINTA. Seguridad social",`EL EMPLEADOR afiliará a LA TRABAJADORA al Sistema de Seguridad Social Integral (pensión, riesgos laborales y caja de compensación familiar, y salud cuando corresponda) y pagará los aportes a través de la Planilla Integrada de Liquidación de Aportes (PILA), desde el primer día de trabajo. ${dias?"Cuando LA TRABAJADORA labore por períodos inferiores a un mes y se encuentre en el régimen subsidiado de salud o como beneficiaria, podrá conservar dicha afiliación y los aportes se harán por semanas, conforme a la ley. Los aportes a riesgos laborales se harán por el mes completo.":"Los aportes se harán sobre el salario mensual pactado."} EL EMPLEADOR descontará del salario únicamente la parte de los aportes que la ley asigna a LA TRABAJADORA.`]);
+    T.push(["SEXTA. Prestaciones sociales y vacaciones",`LA TRABAJADORA tendrá derecho${dias?", en proporción al tiempo laborado,":""} a: prima de servicios, pagadera a más tardar el 30 de junio y el 20 de diciembre de cada año (Ley 1788 de 2016); auxilio de cesantías, que se consignará en el fondo elegido por ella a más tardar el 14 de febrero; intereses sobre las cesantías del 12% anual, pagaderos a más tardar el 31 de enero; vacaciones remuneradas de 15 días hábiles por cada año de servicio; y dotación de calzado y vestido de labor cuando se cumplan los requisitos legales.`]);
+    if($("prueba").checked) T.push(["SÉPTIMA. Período de prueba",`Los primeros quince (15) días de servicio se consideran período de prueba. Durante este período cualquiera de las partes podrá terminar el contrato sin previo aviso y sin indemnización, pagando el salario y las prestaciones causadas.`]);
+    const dur=S.duracion==="fijo"
+      ?`El presente contrato es a término fijo, inicia el ${fecha(v("fIni"))} y termina el ${fecha(v("fFin"))}. Podrá prorrogarse en los términos y con los límites que establece la ley. Si ninguna de las partes da aviso escrito de no prorrogarlo con al menos treinta (30) días de anticipación, se entenderá prorrogado por un período igual.`
+      :`El presente contrato es a término indefinido e inicia el ${fecha(v("fIni"))}.`;
+    T.push(["Duración",dur]);
+    T.push(["Obligaciones de EL EMPLEADOR",`Además de las previstas en la ley, EL EMPLEADOR se obliga a: tratar a LA TRABAJADORA con dignidad y respeto; prevenir y no tolerar ninguna forma de violencia, discriminación o acoso; suministrar los elementos de trabajo y de protección necesarios e informar los riesgos propios de las labores; respetar su intimidad, sus documentos y sus tiempos de descanso; y expedir, a la terminación del contrato, la liquidación y la certificación laboral cuando ella la solicite.`]);
+    T.push(["Obligaciones de LA TRABAJADORA",`LA TRABAJADORA se obliga a: realizar las labores pactadas con cuidado y responsabilidad; cuidar los bienes del hogar que se le confíen; guardar reserva sobre la vida privada de la familia; usar los elementos de protección suministrados; y avisar con la debida anticipación cualquier ausencia o novedad.`]);
+    T.push(["Terminación",`El contrato terminará por las causas previstas en la ley. Si EL EMPLEADOR lo termina sin justa causa, pagará la indemnización legal correspondiente. A la terminación, por cualquier causa, EL EMPLEADOR pagará la liquidación del salario, las prestaciones sociales y las vacaciones pendientes.`]);
+    T.push(["Datos personales",`Las partes autorizan el tratamiento de sus datos personales únicamente para los fines de esta relación laboral, conforme a la Ley 1581 de 2012.`]);
+    // number clauses after SEXTA dynamically
+    const ord=["PRIMERA","SEGUNDA","TERCERA","CUARTA","QUINTA","SEXTA","SÉPTIMA","OCTAVA","NOVENA","DÉCIMA","UNDÉCIMA","DUODÉCIMA","DECIMOTERCERA"];
+    let i=0; T.forEach(c=>{if(c[0]){const name=c[0].replace(/^[A-ZÉÁÍÓÚ]+\.\s*/,"");c[0]=`${ord[i]}. ${name}`;i++;}});
+    T.push(["",`Para constancia se firma en dos (2) ejemplares del mismo valor, uno para cada parte, en ${v("ciudad")}, el ${fecha(new Date().toISOString().slice(0,10))}.`]);
+    return T;
+  }
+  function title(){return `CONTRATO INDIVIDUAL DE TRABAJO DOMÉSTICO ${S.duracion==="fijo"?"A TÉRMINO FIJO":"A TÉRMINO INDEFINIDO"}${S.tipo==="dias"?" POR DÍAS":""}`}
+
+  let LAST=null;
+  function build(){
+    LAST=clauses();
+    const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+    $("doc").innerHTML=`<h3>${title()}</h3>`+LAST.map(([h,p])=>(h?`<h4>${esc(h)}</h4>`:"")+`<p>${esc(p)}</p>`).join("")+
+      `<div class="firmas"><div>EL EMPLEADOR<br>${esc(v("eNombre"))}<br>C.C. ${esc(v("eCedula"))}</div><div>LA TRABAJADORA<br>${esc(v("tNombre"))}<br>C.C. ${esc(v("tCedula"))}</div></div>`;
+    $("wizard").hidden=true;$("result").classList.add("show");
+    $("result").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  function plain(){return title()+"\n\n"+LAST.map(([h,p])=>(h?h+"\n":"")+p).join("\n\n")+`\n\n\n_____________________________\nEL EMPLEADOR\n${v("eNombre")}\nC.C. ${v("eCedula")}\n\n\n_____________________________\nLA TRABAJADORA\n${v("tNombre")}\nC.C. ${v("tCedula")}`}
+
+  function makePDF(){
+    const {jsPDF}=window.jspdf; const doc=new jsPDF({unit:"mm",format:"letter"});
+    const W=215.9,M=24,MW=W-2*M; let y=26;
+    const need=h=>{if(y+h>262){doc.addPage();y=24}};
+    doc.setFont("helvetica","bold");doc.setFontSize(12.5);
+    doc.splitTextToSize(title(),MW).forEach(l=>{doc.text(l,W/2,y,{align:"center"});y+=6});y+=4;
+    LAST.forEach(([h,p])=>{
+      if(h){need(12);doc.setFont("helvetica","bold");doc.setFontSize(10.5);doc.text(h,M,y);y+=5.5}
+      doc.setFont("helvetica","normal");doc.setFontSize(10.5);
+      doc.splitTextToSize(p,MW).forEach(l=>{need(5);doc.text(l,M,y);y+=5});y+=3;
+    });
+    need(40);y+=22;
+    doc.line(M,y,M+70,y);doc.line(W-M-70,y,W-M,y);y+=5;doc.setFontSize(9.5);
+    const L=["EL EMPLEADOR",v("eNombre"),"C.C. "+v("eCedula")],R=["LA TRABAJADORA",v("tNombre"),"C.C. "+v("tCedula")];
+    L.forEach((t,i)=>{doc.text(doc.splitTextToSize(t,70)[0],M,y+i*4.6);doc.text(doc.splitTextToSize(R[i],70)[0],W-M-70,y+i*4.6)});
+    return doc;
+  }
+  async function download(){
+    if(!window.jspdf){toast("No se pudo cargar el generador de PDF. Usa Copiar texto.");return}
+    const name=`Contrato trabajo domestico - ${v("tNombre")}.pdf`.replace(/[\\/:*?"<>|]/g,"");
+    const blob=makePDF().output("blob");
+    try{
+      if(window.claude&&window.claude.use){
+        const dl=await window.claude.use("downloads");
+        if(dl){await dl.save({filename:name,data:blob});toast("Contrato descargado");return}
+      }
+      const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();
+      toast("Contrato descargado");
+    }catch(e){ if(e&&e.code==="declined")return; toast("No se pudo descargar. Usa Copiar texto."); }
+  }
+  $("pdf").onclick=download;
+  $("cCopy").onclick=()=>{try{navigator.clipboard.writeText(plain()).then(()=>toast("Texto copiado"),()=>toast("No se pudo copiar"))}catch(e){toast("No se pudo copiar")}};
+  function toast(t){const el=$("toast");el.textContent=t;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),1800)}
+
+  window.__prefillContrato=function(days,valor){
+    if(step!==1||$("valor").dataset.touched)return;
+    S.dias=new Set(days); syncDays();
+    if(valor){$("valor").value=Math.round(valor).toLocaleString("es-CO");}
+  };
+  $("valor").addEventListener("input",()=>{$("valor").dataset.touched="1"});
+  show();
+})();
+</script>
+<script>
+(function(){
+  const MAP={lu:"lunes",ma:"martes",mi:"miércoles",ju:"jueves",vi:"viernes",sa:"sábado"};
+  function route(){
+    const c=location.hash==="#contrato";
+    document.getElementById("vCalc").hidden=c;
+    document.getElementById("contrato").hidden=!c;
+    document.getElementById("tCalc").setAttribute("aria-current",c?"false":"page");
+    document.getElementById("tCon").setAttribute("aria-current",c?"page":"false");
+    if(c){
+      const g=window.__calcState&&window.__calcState();
+      if(g&&window.__prefillContrato)window.__prefillContrato(g.days.map(d=>MAP[d]),g.valor);
+      window.scrollTo(0,0);
+    } else if(location.hash==="#calculadora"){window.scrollTo(0,0)}
+  }
+  window.addEventListener("hashchange",route); route();
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Cuánto se le paga por día a una empleada doméstica en 2026?","acceptedAnswer":{"@type":"Answer","text":"El mínimo legal por día en 2026 es de $76.394: $58.364 de salario, $9.727 de dominical proporcional y $8.303 de auxilio de transporte."}},
+{"@type":"Question","name":"¿Si viene un solo día a la semana igual debo afiliarla?","acceptedAnswer":{"@type":"Answer","text":"Sí. Debe estar afiliada a ARL por el mes completo y cotizar pensión y caja de compensación por semanas según los días trabajados."}},
+{"@type":"Question","name":"¿Tiene derecho a prima si trabaja por días?","acceptedAnswer":{"@type":"Answer","text":"Sí. La prima, las cesantías, los intereses y las vacaciones se le deben en proporción a lo que gana."}}
+]}
+</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calculadora de prima para empleada doméstica 2026 | Cuentas Claras</title>
+<meta name="description" content="Calcula la prima de junio o diciembre de una empleada doméstica por días o tiempo completo en Colombia 2026, según el tiempo trabajado. Gratis y fácil.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F8;--paper:#FFFFFF;--ink:#18203D;--ink-soft:#4A5272;--line:#D7DCEB;--anil:#2443C9;--anil-soft:#E3E8FB;--sol:#FFC83D;--sol-ink:#3A2A00;--ok:#17804F;--ok-soft:#E1F4EA;--bad:#C2372C;--bad-soft:#FBE6E3;--warn-soft:#FFF4D6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10142A;--paper:#1A2040;--ink:#EEF1FA;--ink-soft:#AEB5D2;--line:#2E3660;--anil:#8FA5FF;--anil-soft:#232C5C;--ok:#5FD39A;--ok-soft:#173A2B;--bad:#FF8A7E;--bad-soft:#40201E;--warn-soft:#3A3115}}
+:root[data-theme="dark"]{--bg:#10142A;--paper:#1A2040;--ink:#EEF1FA;--ink-soft:#AEB5D2;--line:#2E3660;--anil:#8FA5FF;--anil-soft:#232C5C;--ok:#5FD39A;--ok-soft:#173A2B;--bad:#FF8A7E;--bad-soft:#40201E;--warn-soft:#3A3115}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--anil)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sol);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.num{font-variant-numeric:tabular-nums}
+.site-head{padding-top:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--anil);display:grid;place-items:center;color:#fff;font-size:1rem}
+.brand small{display:block;font-family:"Public Sans",sans-serif;font-weight:500;font-size:.78rem;color:var(--ink-soft)}
+.tabs{display:flex;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;max-width:100%;overflow-x:auto}
+.tabs a{padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--ink-soft);font-weight:600;font-size:.9rem;white-space:nowrap}
+.tabs a[aria-current="page"]{background:var(--anil);color:#fff}
+.hero{padding-top:30px;padding-bottom:22px}
+.hero h1{font-size:clamp(2rem,6.2vw,3.4rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.hero p{margin:14px 0 0;color:var(--ink-soft);font-size:1.06rem;max-width:58ch}
+.stamp{display:inline-flex;margin-top:16px;padding:6px 12px;border-radius:999px;background:var(--anil-soft);color:var(--anil);font-weight:600;font-size:.86rem}
+.prose{background:var(--paper);border-top:1px solid var(--line);padding-top:40px;padding-bottom:30px}
+.prose .col{max-width:720px}
+.prose h2{font-size:clamp(1.4rem,4.2vw,2rem);font-weight:800;letter-spacing:-.01em;margin:32px 0 10px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:1.15rem;margin:22px 0 6px}
+.prose p,.prose li{color:var(--ink-soft)}
+.prose strong{color:var(--ink)}
+.formula{background:var(--bg);border-radius:14px;padding:14px 16px;margin:12px 0;overflow-x:auto}
+.formula div{display:flex;justify-content:space-between;gap:16px;padding:4px 0;white-space:nowrap}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--anil)}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+.site-foot{padding-top:28px;padding-bottom:36px;color:var(--ink-soft);font-size:.86rem}
+.site-foot nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 14px}
+.site-foot nav a{color:var(--ink-soft)}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.tool{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);padding-bottom:40px}
+.tool>*{min-width:0}
+select.in{text-overflow:ellipsis}
+@media (min-width:900px){.tool{grid-template-columns:minmax(0,1fr) minmax(0,420px);align-items:start}.rcol{position:sticky;top:calc(env(safe-area-inset-top,0px) + 18px)}}
+.form{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px}
+.q{padding:18px 0;border-bottom:1px solid var(--line)}
+.q:first-child{padding-top:4px}.q:last-child{border-bottom:0;padding-bottom:4px}
+.q h2{font-size:1.15rem;font-weight:700}
+.hint{margin:6px 0 0;color:var(--ink-soft);font-size:.92rem}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.seg button{padding:12px;border-radius:14px;border:2px solid var(--line);background:transparent;font-weight:600;cursor:pointer;text-align:left;line-height:1.3}
+.seg button small{display:block;font-weight:400;color:var(--ink-soft);font-size:.8rem;margin-top:2px}
+.seg button[aria-pressed="true"]{border-color:var(--anil);background:var(--anil-soft)}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:14px}
+.day{min-height:46px;border-radius:14px;border:2px solid var(--line);background:transparent;cursor:pointer;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.1rem}
+.day[aria-pressed="true"]{background:var(--sol);border-color:var(--sol);color:var(--sol-ink)}
+.money{display:flex;align-items:center;margin-top:14px;border:2px solid var(--line);border-radius:14px;padding:0 14px}
+.money:focus-within{border-color:var(--anil)}
+.money b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;color:var(--ink-soft)}
+.money input{flex:1;min-width:0;border:0;background:transparent;padding:13px 8px;font-size:1.3rem;font-weight:600;outline:none}
+.in{width:100%;margin-top:14px;border:2px solid var(--line);border-radius:14px;padding:12px 14px;background:transparent;font-size:1.05rem;font-weight:600}
+.in:focus{border-color:var(--anil);outline:none}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+.in{min-width:0;max-width:100%}
+.row2 label{display:block;font-size:.86rem;font-weight:600;color:var(--ink-soft);margin-top:12px}
+.row2 .in{margin-top:6px}
+.warn{margin-top:12px;padding:12px 14px;border-radius:12px;background:var(--bad-soft);color:var(--bad);font-weight:600;font-size:.92rem}
+.receipt{position:relative;background:var(--paper);padding:26px 22px 30px;border-radius:6px 6px 0 0;filter:drop-shadow(0 18px 30px rgba(24,32,61,.14))}
+.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:var(--paper);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%}
+.r-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:14px;border-bottom:2px dashed var(--line)}
+.r-head h2{font-size:1.05rem}
+.r-head span{font-size:.82rem;color:var(--ink-soft)}
+.big{padding:20px 0 6px}
+.big .label{color:var(--ink-soft);font-weight:500}
+.big .value{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2.6rem,11vw,3.6rem);letter-spacing:-.02em;line-height:1;margin-top:4px}
+.rows{margin:10px 0 0;padding:0;list-style:none}
+.rows li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;font-size:.95rem}
+.rows li span:first-child{color:var(--ink-soft)}
+.rows li.sum{border-top:1px solid var(--line);margin-top:4px;padding-top:10px;font-weight:700}
+.due{margin-top:16px;padding:14px 16px;border-radius:14px;background:var(--sol);color:var(--sol-ink)}
+.due b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.25rem;display:block}
+.due span{font-size:.88rem}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.btn{display:flex;align-items:center;justify-content:center;padding:14px;border-radius:14px;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;font-size:.98rem}
+.btn-wa{background:#1FA855;color:#fff}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.cta{display:block;margin-top:14px;padding:16px;border-radius:16px;border:2px solid var(--anil);text-decoration:none;color:var(--ink)}
+.cta b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem;color:var(--anil);display:block}
+.cta span{font-size:.9rem;color:var(--ink-soft)}
+</style>
+</head>
+<body><header class="wrap site-head">
+  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✓</span><span>Cuentas Claras<small>Para pagar bien a quien trabaja en tu casa</small></span></a>
+  <nav class="tabs" aria-label="Herramientas"><a href="index.html">Pago por días</a><a href="prima.html" aria-current="page">Prima</a><a href="index.html#contrato">Contrato</a></nav>
+</header>
+<main>
+<section class="wrap hero">
+  <h1>Calculadora de prima para empleada doméstica 2026</h1>
+  <p>Calcula cuánto le corresponde de prima de junio o de diciembre, trabaje por días o tiempo completo, según el tiempo que lleva contigo.</p>
+  <div class="stamp">Actualizada con el salario mínimo 2026</div>
+</section>
+
+<section class="wrap tool" aria-label="Calculadora de prima">
+  <div class="form">
+    <div class="q">
+      <h2>¿Qué prima quieres calcular?</h2>
+      <select class="in" id="sem" aria-label="Semestre"></select>
+    </div>
+    <div class="q">
+      <h2>¿Cómo trabaja?</h2>
+      <div class="seg" id="modo">
+        <button type="button" data-v="dias" aria-pressed="true">Por días<small>Algunos días a la semana</small></button>
+        <button type="button" data-v="mes" aria-pressed="false">Tiempo completo<small>Con salario mensual</small></button>
+      </div>
+    </div>
+    <div class="q" id="qDias">
+      <h2>¿Qué días va a tu casa?</h2>
+      <div class="days" id="days">
+        <button type="button" class="day" data-d="lu" aria-pressed="false">L</button><button type="button" class="day" data-d="ma" aria-pressed="true">M</button><button type="button" class="day" data-d="mi" aria-pressed="false">M</button><button type="button" class="day" data-d="ju" aria-pressed="false">J</button><button type="button" class="day" data-d="vi" aria-pressed="true">V</button><button type="button" class="day" data-d="sa" aria-pressed="false">S</button>
+      </div>
+    </div>
+    <div class="q">
+      <h2 id="pagoTit">¿Cuánto le pagas por día?</h2>
+      <p class="hint" id="pagoHint"></p>
+      <label class="money"><b aria-hidden="true">$</b><input id="pago" inputmode="numeric" autocomplete="off" aria-label="Valor del pago"></label>
+      <div id="pagoWarn"></div>
+    </div>
+    <div class="q">
+      <h2>¿Vive en tu casa?</h2>
+      <div class="seg" id="vive">
+        <button type="button" data-v="no" aria-pressed="true">No<small>Llega y se va: recibe auxilio de transporte</small></button>
+        <button type="button" data-v="si" aria-pressed="false">Sí<small>No recibe auxilio de transporte</small></button>
+      </div>
+    </div>
+    <div class="q">
+      <h2>¿Desde cuándo trabaja contigo?</h2>
+      <div class="row2">
+        <div><label for="ini">Fecha de inicio</label><input class="in" type="date" id="ini"></div>
+        <div><label for="fin">Fecha de salida (si ya no trabaja)</label><input class="in" type="date" id="fin"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rcol">
+    <article class="receipt" aria-live="polite">
+      <div class="r-head"><h2>Tu prima</h2><span id="rsub"></span></div>
+      <div id="rbody"></div>
+    </article>
+  </div>
+</section>
+
+<section class="prose">
+  <div class="wrap col">
+    <h2>¿Qué es la prima y quién tiene derecho?</h2>
+    <p>La prima de servicios es un pago adicional equivalente a <strong>medio mes de salario por cada semestre trabajado</strong>. Desde la Ley 1788 de 2016, las trabajadoras del servicio doméstico tienen derecho a ella igual que cualquier otro trabajador, sin importar si trabajan por días, internas o externas.</p>
+    <h2>¿Cuándo se paga?</h2>
+    <p>Se paga en dos partes: la del primer semestre (enero a junio) <strong>a más tardar el 30 de junio</strong>, y la del segundo semestre (julio a diciembre) <strong>a más tardar el 20 de diciembre</strong>. Si el contrato termina antes, se paga la parte proporcional en la liquidación.</p>
+    <h2>¿Cómo se calcula?</h2>
+    <div class="formula num">
+      <div><span>Prima =</span><strong>(salario mensual + auxilio de transporte) × días trabajados ÷ 360</strong></div>
+    </div>
+    <p>Los días se cuentan desde que empezó el contrato en ese semestre, no solo los días que fue a tu casa. Si trabaja por días, el salario mensual es lo que gana en un mes con los días que va. El auxilio de transporte se suma a la base si ella no vive en tu casa.</p>
+    <h3>Ejemplo</h3>
+    <p>Una empleada que va 2 días por semana y gana el mínimo legal ($76.394 por día) recibe en un mes unos $687.545. Si trabajó todo el segundo semestre, su prima de diciembre es de $687.545 × 180 ÷ 360 = <strong>$343.773</strong>.</p>
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Si lleva menos de seis meses tiene derecho a prima?</summary><p>Sí. Se paga en proporción a los días trabajados en el semestre. Si empezó en septiembre, se calcula desde esa fecha hasta el 31 de diciembre.</p></details>
+    <details><summary>¿Si renunció o la despidieron, pierde la prima?</summary><p>No. La parte proporcional del semestre se incluye en la liquidación final, sin importar el motivo de la terminación.</p></details>
+    <details><summary>¿La prima se puede incluir en el pago diario?</summary><p>No. La ley no permite pagar la prima mezclada con el salario. Debe pagarse por separado, en sus fechas.</p></details>
+    <details><summary>¿El auxilio de transporte entra en la prima?</summary><p>Sí. Para calcular la prima se suma el auxilio de transporte al salario, cuando la trabajadora tiene derecho a él.</p></details>
+    <details><summary>¿Qué pasa si no se le paga la prima?</summary><p>La trabajadora puede reclamarla ante el Ministerio del Trabajo. Además, si al terminar el contrato no se pagan los salarios y prestaciones debidos, la ley prevé una indemnización por cada día de retraso.</p></details>
+  </div>
+</section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+  const SMMLV=1750905, AUX=249095, auxD=AUX/30, salD=SMMLV/30;
+  const $=id=>document.getElementById(id);
+  const fmt=n=>"$"+Math.round(n).toLocaleString("es-CO");
+  const MESL=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const HOY=new Date();HOY.setHours(0,0,0,0);
+  const D=(y,m,d)=>new Date(y,m,d);
+  const corto=f=>`${f.getDate()} de ${MESL[f.getMonth()]} de ${f.getFullYear()}`;
+  function d360(a,b){if(b<a)return 0;return (b.getFullYear()-a.getFullYear())*360+(b.getMonth()-a.getMonth())*30+(Math.min(b.getDate(),30)-Math.min(a.getDate(),30))+1}
+  const parse=v=>{if(!v)return null;const[a,b,c]=v.split("-").map(Number);return D(a,b-1,c)};
+  const st={modo:"dias",days:new Set(["ma","vi"]),vive:"no",pago:0};
+  // semesters
+  const Y=HOY.getFullYear(), sems=[];
+  [[Y,0],[Y,1],[Y+1,0]].forEach(([y,h])=>sems.push({y,h,ini:D(y,h?6:0,1),fin:D(y,h?11:11,h?31:0)}));
+  sems.forEach(s=>{s.fin=s.h?D(s.y,11,31):D(s.y,5,30);s.pago=s.h?D(s.y,11,20):D(s.y,5,30);s.label=`Prima de ${s.h?"diciembre":"junio"} ${s.y} (${s.h?"julio a diciembre":"enero a junio"})`});
+  $("sem").innerHTML=sems.map((s,i)=>`<option value="${i}">${s.label}</option>`).join("");
+  $("sem").value=HOY<=D(Y,5,30)?"0":"1";
+  $("ini").value=`${Y}-01-01`;
+
+  function minimo(){return st.modo==="dias"?(st.vive==="no"?salD*7/6+auxD:salD*7/6):SMMLV}
+  function setupPago(){
+    const dias=st.modo==="dias";
+    $("qDias").hidden=!dias;
+    $("pagoTit").textContent=dias?"¿Cuánto le pagas por día?":"¿Cuál es su salario mensual?";
+    $("pagoHint").textContent=dias
+      ?(st.vive==="no"?`Mínimo legal 2026: ${fmt(minimo())} por día, incluido el transporte.`:`Mínimo legal 2026: ${fmt(minimo())} por día.`)
+      :`Mínimo legal 2026: ${fmt(SMMLV)}, sin contar el auxilio de transporte.`;
+    if(!st.pago){$("pago").value=Math.round(minimo()).toLocaleString("es-CO");}
+  }
+  function calc(){
+    const s=sems[+$("sem").value], ini=parse($("ini").value)||s.ini, fin=parse($("fin").value);
+    const pago=parseInt(($("pago").value||"").replace(/\D/g,""),10)||0;
+    let salMes,auxMes,dm=0;
+    if(st.modo==="dias"){
+      dm=Math.round(st.days.size*52/12);
+      const a=st.vive==="no"?auxD:0;
+      salMes=Math.max(pago-a,0)*dm; auxMes=a*dm;
+    } else {
+      salMes=pago; auxMes=(st.vive==="no"&&pago<=2*SMMLV)?AUX:0;
+    }
+    const desde=ini>s.ini?ini:s.ini, hasta=fin&&fin<s.fin?fin:s.fin;
+    const dias=d360(desde,hasta);
+    return {s,salMes,auxMes,base:salMes+auxMes,dias,desde,hasta,prima:(salMes+auxMes)*dias/360,dm,pago,fin};
+  }
+  function render(){
+    setupPago();
+    const r=calc();
+    $("rsub").textContent=r.s.h?"Diciembre "+r.s.y:"Junio "+r.s.y;
+    const w=$("pagoWarn");
+    w.innerHTML=(r.pago&&r.pago<Math.round(minimo()))?`<div class="warn">Ese pago está ${fmt(minimo()-r.pago)} por debajo del mínimo legal. La prima se calcula con lo que debería ganar como mínimo.</div>`:"";
+    if(st.modo==="dias"&&!st.days.size){$("rbody").innerHTML='<p class="hint" style="padding:24px 0">Marca los días que trabaja para calcular su prima.</p>';return}
+    if(r.dias<=0){$("rbody").innerHTML=`<p class="hint" style="padding:24px 0">En ese semestre no hubo días de contrato con las fechas que pusiste.</p>`;return}
+    let base=r.base;
+    if(r.pago<Math.round(minimo())){ // usar mínimo legal
+      if(st.modo==="dias"){const a=st.vive==="no"?auxD:0;base=(minimo()-a)*r.dm+a*r.dm}else{base=SMMLV+(st.vive==="no"?AUX:0)}
+    }
+    const prima=base*r.dias/360;
+    const sal=st.modo==="dias"?`${r.dm} días al mes`:"salario mensual";
+    $("rbody").innerHTML=`
+      <div class="big"><div class="label">${r.s.h?"Prima de diciembre":"Prima de junio"}</div><div class="value num">${fmt(prima)}</div></div>
+      <ul class="rows">
+        <li><span>Base mensual (${sal}${st.vive==="no"?", con transporte":""})</span><span class="num">${fmt(base)}</span></li>
+        <li><span>Días de contrato en el semestre</span><span class="num">${r.dias} de 180</span></li>
+        <li><span>Periodo</span><span>${r.desde.getDate()} ${MESL[r.desde.getMonth()].slice(0,3)} a ${r.hasta.getDate()} ${MESL[r.hasta.getMonth()].slice(0,3)}</span></li>
+        <li class="sum"><span>${fmt(base)} × ${r.dias} ÷ 360</span><span class="num">${fmt(prima)}</span></li>
+      </ul>
+      <div class="due"><b>${r.fin&&r.fin<r.s.fin?"Se paga en la liquidación":"Se paga a más tardar el "+corto(r.s.pago)}</b><span>${r.fin&&r.fin<r.s.fin?"Como el contrato terminó, esta prima se incluye en su liquidación final.":"Se le entrega directamente a ella, aparte de su pago normal."}</span></div>
+      <a class="cta" href="index.html"><b>Calcula todos sus pagos del año</b><span>Pago por día, seguridad social, cesantías y vacaciones.</span></a>
+      <div class="actions"><a class="btn btn-wa" id="wa" target="_blank" rel="noopener">Enviar por WhatsApp</a><button class="btn btn-ghost" id="copy" type="button">Copiar resultado</button></div>`;
+    const txt=`${r.s.label}\nBase mensual: ${fmt(base)}\nDías en el semestre: ${r.dias}\nPrima: ${fmt(prima)}\nFecha límite: ${corto(r.s.pago)}\n\nCalcula la tuya gratis: ${location.origin+location.pathname}`;
+    $("wa").href="https://wa.me/?text="+encodeURIComponent(txt);
+    $("copy").onclick=()=>{try{navigator.clipboard.writeText(txt).then(()=>toast("Resultado copiado"))}catch(e){}};
+  }
+  function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1600)}
+  function seg(id,key){$(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;st[key]=b.dataset.v;[...$(id).children].forEach(x=>x.setAttribute("aria-pressed",x===b));if(key!=="vive"||!st.pagoTocado){st.pago=0;$("pago").value=""}render()})}
+  seg("modo","modo");seg("vive","vive");
+  $("days").addEventListener("click",e=>{const b=e.target.closest(".day");if(!b)return;const d=b.dataset.d;st.days.has(d)?st.days.delete(d):st.days.add(d);b.setAttribute("aria-pressed",st.days.has(d));render()});
+  $("pago").addEventListener("input",e=>{const v=e.target.value.replace(/\D/g,"").slice(0,9);st.pago=v?+v:0;st.pagoTocado=!!v;e.target.value=v?(+v).toLocaleString("es-CO"):"";render()});
+  ["sem","ini","fin"].forEach(id=>$(id).addEventListener("change",render));
+  render();
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Cuándo se paga la prima a una empleada doméstica?","acceptedAnswer":{"@type":"Answer","text":"La del primer semestre a más tardar el 30 de junio y la del segundo semestre a más tardar el 20 de diciembre."}},
+{"@type":"Question","name":"¿Cómo se calcula la prima de una empleada por días?","acceptedAnswer":{"@type":"Answer","text":"Se multiplica lo que gana al mes, más el auxilio de transporte, por los días de contrato en el semestre y se divide entre 360."}},
+{"@type":"Question","name":"¿Si lleva menos de seis meses tiene derecho a prima?","acceptedAnswer":{"@type":"Answer","text":"Sí, en proporción a los días trabajados en el semestre."}}]}
+</script>
+<footer class="wrap site-foot">
+  <nav aria-label="Información del sitio"><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Política de privacidad</a><a href="terminos.html">Términos de uso</a></nav>
+  © 2026 Cuentas Claras. Información de referencia basada en la ley colombiana; no reemplaza la asesoría de un abogado o contador.
+</footer>
+</body>
+</html>

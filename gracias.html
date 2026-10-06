@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mensaje enviado | Cuentas Claras</title>
+<meta name="description" content="Gracias por escribirnos.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F8;--paper:#FFFFFF;--ink:#18203D;--ink-soft:#4A5272;--line:#D7DCEB;--anil:#2443C9;--anil-soft:#E3E8FB;--sol:#FFC83D;--sol-ink:#3A2A00;--ok:#17804F;--ok-soft:#E1F4EA;--bad:#C2372C;--bad-soft:#FBE6E3;--warn-soft:#FFF4D6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10142A;--paper:#1A2040;--ink:#EEF1FA;--ink-soft:#AEB5D2;--line:#2E3660;--anil:#8FA5FF;--anil-soft:#232C5C;--ok:#5FD39A;--ok-soft:#173A2B;--bad:#FF8A7E;--bad-soft:#40201E;--warn-soft:#3A3115}}
+:root[data-theme="dark"]{--bg:#10142A;--paper:#1A2040;--ink:#EEF1FA;--ink-soft:#AEB5D2;--line:#2E3660;--anil:#8FA5FF;--anil-soft:#232C5C;--ok:#5FD39A;--ok-soft:#173A2B;--bad:#FF8A7E;--bad-soft:#40201E;--warn-soft:#3A3115}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--anil)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sol);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.num{font-variant-numeric:tabular-nums}
+.site-head{padding-top:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--anil);display:grid;place-items:center;color:#fff;font-size:1rem}
+.brand small{display:block;font-family:"Public Sans",sans-serif;font-weight:500;font-size:.78rem;color:var(--ink-soft)}
+.tabs{display:flex;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;max-width:100%;overflow-x:auto}
+.tabs a{padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--ink-soft);font-weight:600;font-size:.9rem;white-space:nowrap}
+.tabs a[aria-current="page"]{background:var(--anil);color:#fff}
+.hero{padding-top:30px;padding-bottom:22px}
+.hero h1{font-size:clamp(2rem,6.2vw,3.4rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.hero p{margin:14px 0 0;color:var(--ink-soft);font-size:1.06rem;max-width:58ch}
+.stamp{display:inline-flex;margin-top:16px;padding:6px 12px;border-radius:999px;background:var(--anil-soft);color:var(--anil);font-weight:600;font-size:.86rem}
+.prose{background:var(--paper);border-top:1px solid var(--line);padding-top:40px;padding-bottom:30px}
+.prose .col{max-width:720px}
+.prose h2{font-size:clamp(1.4rem,4.2vw,2rem);font-weight:800;letter-spacing:-.01em;margin:32px 0 10px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:1.15rem;margin:22px 0 6px}
+.prose p,.prose li{color:var(--ink-soft)}
+.prose strong{color:var(--ink)}
+.formula{background:var(--bg);border-radius:14px;padding:14px 16px;margin:12px 0;overflow-x:auto}
+.formula div{display:flex;justify-content:space-between;gap:16px;padding:4px 0;white-space:nowrap}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--anil)}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+.site-foot{padding-top:28px;padding-bottom:36px;color:var(--ink-soft);font-size:.86rem}
+.site-foot nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 14px}
+.site-foot nav a{color:var(--ink-soft)}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body><header class="wrap site-head">
+  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✓</span><span>Cuentas Claras<small>Para pagar bien a quien trabaja en tu casa</small></span></a>
+  <nav class="tabs" aria-label="Herramientas"><a href="index.html">Pago por días</a><a href="prima.html">Prima</a><a href="index.html#contrato">Contrato</a></nav>
+</header>
+<main>
+<section class="wrap hero"><h1>Gracias por escribirnos</h1><p>Recibimos tu mensaje y te responderemos al correo que nos dejaste.</p></section>
+<section class="wrap" style="padding-bottom:40px"><p><a href="index.html">Volver a la calculadora</a></p></section>
+</main>
+<footer class="wrap site-foot">
+  <nav aria-label="Información del sitio"><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Política de privacidad</a><a href="terminos.html">Términos de uso</a></nav>
+  © 2026 Cuentas Claras. Información de referencia basada en la ley colombiana; no reemplaza la asesoría de un abogado o contador.
+</footer>
+</body>
+</html>
