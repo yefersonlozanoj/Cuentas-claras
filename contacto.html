@@ -73,6 +73,12 @@ details p{margin:10px 0 0}
 .send{margin-top:18px;width:100%;padding:14px;border:0;border-radius:14px;background:var(--anil);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
 .small{color:var(--ink-soft);font-size:.86rem;margin-top:12px}
 </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MGL03MN43"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-2MGL03MN43');
+</script>
 </head>
 <body><header class="wrap site-head">
   <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="20" height="20" aria-hidden="true"><path d="M22 52 L42 72 L80 30" fill="none" stroke="#2443C9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Calculadora Hogar<small>Para pagar bien a quien trabaja en tu casa</small></span></a>
@@ -98,6 +104,26 @@ details p{margin:10px 0 0}
   <nav aria-label="Información del sitio"><a href="/nosotros">Quiénes somos</a><a href="/contacto">Contacto</a><a href="/privacidad">Política de privacidad</a><a href="/terminos">Términos de uso</a></nav>
   © 2026 Calculadora Hogar. Información de referencia basada en la ley colombiana; no reemplaza la asesoría de un abogado o contador.
 </footer>
+<script>
+(function(){
+  function ev(n,p){try{if(window.gtag)gtag('event',n,Object.assign({pagina:location.pathname},p||{}));}catch(e){}}
+  var usado=false;
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('a,button,input,label,select');if(!t)return;
+    if(t.id==='wa')ev('compartir_whatsapp');
+    else if(t.id==='copy')ev('copiar_resultado');
+    else if(t.id==='pdf')ev('descargar_contrato');
+    else if(t.id==='cCopy')ev('copiar_contrato');
+    else if(t.classList.contains('icard'))ev('clic_tarjeta_inicio',{destino:t.getAttribute('href')});
+    else if(t.classList.contains('cta'))ev('clic_boton_recibo',{destino:t.getAttribute('href')});
+    else if(t.id==='next'){var r=document.getElementById('result');var antes=r&&r.classList.contains('show');
+      setTimeout(function(){if(r&&!antes&&r.classList.contains('show'))ev('contrato_generado');},150);}
+    if(!usado&&t.closest('#vCalc .form, .tool .form')){usado=true;ev('usar_calculadora');}
+  },true);
+  function ruta(){if(location.hash==='#contrato')ev('abrir_contrato');}
+  window.addEventListener('hashchange',ruta);ruta();
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6c1bd20ad86041c0bee5f664fa686c8f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -65,6 +65,12 @@ details p{margin:10px 0 0}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MGL03MN43"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-2MGL03MN43');
+</script>
 </head>
 <body><header class="wrap site-head">
   <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="20" height="20" aria-hidden="true"><path d="M22 52 L42 72 L80 30" fill="none" stroke="#2443C9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Calculadora Hogar<small>Para pagar bien a quien trabaja en tu casa</small></span></a>
@@ -73,7 +79,7 @@ details p{margin:10px 0 0}
 <main>
 <section class="wrap hero"><h1>Política de privacidad</h1><p>Tu información es tuya. Aquí te contamos qué datos se usan en este sitio y para qué.</p></section>
 <section class="prose"><div class="wrap col">
-<p><strong>Última actualización: 6 de octubre de 2026.</strong></p>
+<p><strong>Última actualización: 8 de octubre de 2026.</strong></p>
 <h2>Quiénes somos</h2>
 <p>Calculadora Hogar es un sitio web gratuito con calculadoras y guías sobre el trabajo doméstico en Colombia. Esta política explica cómo tratamos la información de las personas que lo visitan, de acuerdo con la Ley 1581 de 2012 y sus decretos reglamentarios sobre protección de datos personales.</p>
 <h2>Los datos que escribes en las calculadoras y en el contrato</h2>
@@ -84,7 +90,7 @@ details p{margin:10px 0 0}
 <p>Este sitio puede mostrar anuncios de Google AdSense. Google y otros proveedores externos usan cookies para mostrar anuncios basados en las visitas anteriores de un usuario a este y a otros sitios web. Las cookies de publicidad de Google permiten que Google y sus socios muestren anuncios según las visitas a este sitio y a otros sitios de internet.</p>
 <p>Puedes desactivar la publicidad personalizada en la <a href="https://adssettings.google.com" target="_blank" rel="noopener">configuración de anuncios de Google</a>, o desactivar las cookies de otros proveedores en <a href="https://www.aboutads.info" target="_blank" rel="noopener">www.aboutads.info</a>. También puedes bloquear o borrar las cookies desde la configuración de tu navegador.</p>
 <h2>Estadísticas de visitas</h2>
-<p>Podemos usar herramientas de medición para saber cuántas personas visitan el sitio y qué páginas usan más. Esta información es general y no te identifica personalmente.</p>
+<p>Usamos <strong>Google Analytics</strong> y <strong>Cloudflare Web Analytics</strong> para saber cuántas personas visitan el sitio, qué páginas usan y qué herramientas les resultan útiles (por ejemplo, cuántas veces se descarga el contrato o se comparte un resultado). Google Analytics usa cookies para esto. Estas herramientas no reciben los nombres, cédulas, salarios ni demás datos que escribes en las calculadoras o en el contrato. Puedes impedir que Google Analytics registre tu visita con el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">complemento de inhabilitación de Google Analytics</a> o bloqueando las cookies en tu navegador.</p>
 <h2>Tus derechos</h2>
 <p>Como titular de tus datos puedes conocer, actualizar, rectificar y pedir que se eliminen los datos que nos hayas enviado, así como revocar tu autorización. Para hacerlo, escríbenos desde la página de <a href="/contacto">contacto</a>. Responderemos dentro de los plazos que fija la ley.</p>
 <h2>Cambios a esta política</h2>
@@ -95,6 +101,26 @@ details p{margin:10px 0 0}
   <nav aria-label="Información del sitio"><a href="/nosotros">Quiénes somos</a><a href="/contacto">Contacto</a><a href="/privacidad">Política de privacidad</a><a href="/terminos">Términos de uso</a></nav>
   © 2026 Calculadora Hogar. Información de referencia basada en la ley colombiana; no reemplaza la asesoría de un abogado o contador.
 </footer>
+<script>
+(function(){
+  function ev(n,p){try{if(window.gtag)gtag('event',n,Object.assign({pagina:location.pathname},p||{}));}catch(e){}}
+  var usado=false;
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('a,button,input,label,select');if(!t)return;
+    if(t.id==='wa')ev('compartir_whatsapp');
+    else if(t.id==='copy')ev('copiar_resultado');
+    else if(t.id==='pdf')ev('descargar_contrato');
+    else if(t.id==='cCopy')ev('copiar_contrato');
+    else if(t.classList.contains('icard'))ev('clic_tarjeta_inicio',{destino:t.getAttribute('href')});
+    else if(t.classList.contains('cta'))ev('clic_boton_recibo',{destino:t.getAttribute('href')});
+    else if(t.id==='next'){var r=document.getElementById('result');var antes=r&&r.classList.contains('show');
+      setTimeout(function(){if(r&&!antes&&r.classList.contains('show'))ev('contrato_generado');},150);}
+    if(!usado&&t.closest('#vCalc .form, .tool .form')){usado=true;ev('usar_calculadora');}
+  },true);
+  function ruta(){if(location.hash==='#contrato')ev('abrir_contrato');}
+  window.addEventListener('hashchange',ruta);ruta();
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6c1bd20ad86041c0bee5f664fa686c8f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

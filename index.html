@@ -278,7 +278,13 @@ footer .soon span{padding:6px 12px;border-radius:999px;border:1px solid var(--li
 .icard:active{transform:scale(.98)}
 .tool-h{font-size:clamp(1.6rem,5vw,2.6rem);font-weight:800;letter-spacing:-.02em;max-width:22ch}
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MGL03MN43"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-2MGL03MN43');
+</script>
 </head>
 <body>
 
@@ -996,6 +1002,26 @@ footer .soon span{padding:6px 12px;border-radius:999px;border:1px solid var(--li
 {"@type":"Question","name":"¿Si viene un solo día a la semana igual debo afiliarla?","acceptedAnswer":{"@type":"Answer","text":"Sí. Debe estar afiliada a ARL por el mes completo y cotizar pensión y caja de compensación por semanas según los días trabajados."}},
 {"@type":"Question","name":"¿Tiene derecho a prima si trabaja por días?","acceptedAnswer":{"@type":"Answer","text":"Sí. La prima, las cesantías, los intereses y las vacaciones se le deben en proporción a lo que gana."}}
 ]}
+</script>
+<script>
+(function(){
+  function ev(n,p){try{if(window.gtag)gtag('event',n,Object.assign({pagina:location.pathname},p||{}));}catch(e){}}
+  var usado=false;
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('a,button,input,label,select');if(!t)return;
+    if(t.id==='wa')ev('compartir_whatsapp');
+    else if(t.id==='copy')ev('copiar_resultado');
+    else if(t.id==='pdf')ev('descargar_contrato');
+    else if(t.id==='cCopy')ev('copiar_contrato');
+    else if(t.classList.contains('icard'))ev('clic_tarjeta_inicio',{destino:t.getAttribute('href')});
+    else if(t.classList.contains('cta'))ev('clic_boton_recibo',{destino:t.getAttribute('href')});
+    else if(t.id==='next'){var r=document.getElementById('result');var antes=r&&r.classList.contains('show');
+      setTimeout(function(){if(r&&!antes&&r.classList.contains('show'))ev('contrato_generado');},150);}
+    if(!usado&&t.closest('#vCalc .form, .tool .form')){usado=true;ev('usar_calculadora');}
+  },true);
+  function ruta(){if(location.hash==='#contrato')ev('abrir_contrato');}
+  window.addEventListener('hashchange',ruta);ruta();
+})();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6c1bd20ad86041c0bee5f664fa686c8f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
