@@ -6,6 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Calculadora de prima para empleada doméstica 2026 | Calculadora Hogar</title>
 <meta name="description" content="Calcula la prima de junio o diciembre de una empleada doméstica por días o tiempo completo en Colombia 2026, según el tiempo trabajado. Gratis y fácil.">
+<link rel="canonical" href="https://calculadorahogar.com.co/prima">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calculadora Hogar">
+<meta property="og:locale" content="es_CO">
+<meta property="og:url" content="https://calculadorahogar.com.co/prima">
+<meta property="og:title" content="Calculadora de prima para empleada doméstica 2026">
+<meta property="og:description" content="Calcula la prima de junio o diciembre de una empleada doméstica por días o tiempo completo en Colombia 2026, según el tiempo trabajado. Gratis y fácil.">
+<meta property="og:image" content="https://calculadorahogar.com.co/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#EEF1F8;--paper:#FFFFFF;--ink:#18203D;--ink-soft:#4A5272;--line:#D7DCEB;--anil:#2443C9;--anil-soft:#E3E8FB;--sol:#FFC83D;--sol-ink:#3A2A00;--ok:#17804F;--ok-soft:#E1F4EA;--bad:#C2372C;--bad-soft:#FBE6E3;--warn-soft:#FFF4D6;
@@ -107,8 +118,8 @@ select.in{text-overflow:ellipsis}
 </style>
 </head>
 <body><header class="wrap site-head">
-  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="20" height="20" aria-hidden="true"><path d="M22 52 L42 72 L80 30" fill="none" stroke="#2443C9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Calculadora Hogar<small>Para pagar bien a quien trabaja en tu casa</small></span></a>
-  <nav class="tabs" aria-label="Herramientas"><a href="index.html">Pago por días</a><a href="prima.html" aria-current="page">Prima</a><a href="index.html#contrato">Contrato</a></nav>
+  <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="20" height="20" aria-hidden="true"><path d="M22 52 L42 72 L80 30" fill="none" stroke="#2443C9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Calculadora Hogar<small>Para pagar bien a quien trabaja en tu casa</small></span></a>
+  <nav class="tabs" aria-label="Herramientas"><a href="/">Pago por días</a><a href="/prima" aria-current="page">Prima</a><a href="/#contrato">Contrato</a></nav>
 </header>
 <main>
 <section class="wrap hero">
@@ -257,9 +268,9 @@ select.in{text-overflow:ellipsis}
         <li class="sum"><span>${fmt(base)} × ${r.dias} ÷ 360</span><span class="num">${fmt(prima)}</span></li>
       </ul>
       <div class="due"><b>${r.fin&&r.fin<r.s.fin?"Se paga en la liquidación":"Se paga a más tardar el "+corto(r.s.pago)}</b><span>${r.fin&&r.fin<r.s.fin?"Como el contrato terminó, esta prima se incluye en su liquidación final.":"Se le entrega directamente a ella, aparte de su pago normal."}</span></div>
-      <a class="cta" href="index.html"><b>Calcula todos sus pagos del año</b><span>Pago por día, seguridad social, cesantías y vacaciones.</span></a>
+      <a class="cta" href="/"><b>Calcula todos sus pagos del año</b><span>Pago por día, seguridad social, cesantías y vacaciones.</span></a>
       <div class="actions"><a class="btn btn-wa" id="wa" target="_blank" rel="noopener">Compartir por WhatsApp</a><button class="btn btn-ghost" id="copy" type="button">Copiar resultado</button></div>`;
-    const txt=`${r.s.label}\nBase mensual: ${fmt(base)}\nDías en el semestre: ${r.dias}\nPrima: ${fmt(prima)}\nFecha límite: ${corto(r.s.pago)}\n\nCalcula la tuya gratis: https://calculadorahogar.com.co/prima.html`;
+    const txt=`${r.s.label}\nBase mensual: ${fmt(base)}\nDías en el semestre: ${r.dias}\nPrima: ${fmt(prima)}\nFecha límite: ${corto(r.s.pago)}\n\nCalcula la tuya gratis: https://calculadorahogar.com.co/prima`;
     $("wa").href="https://api.whatsapp.com/send?text="+encodeURIComponent(txt);
     $("wa").onclick=e=>{if(navigator.share){e.preventDefault();navigator.share({text:txt}).catch(()=>{});}};
     $("copy").onclick=()=>{try{navigator.clipboard.writeText(txt).then(()=>toast("Resultado copiado"))}catch(e){}};
@@ -280,7 +291,7 @@ select.in{text-overflow:ellipsis}
 {"@type":"Question","name":"¿Si lleva menos de seis meses tiene derecho a prima?","acceptedAnswer":{"@type":"Answer","text":"Sí, en proporción a los días trabajados en el semestre."}}]}
 </script>
 <footer class="wrap site-foot">
-  <nav aria-label="Información del sitio"><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Política de privacidad</a><a href="terminos.html">Términos de uso</a></nav>
+  <nav aria-label="Información del sitio"><a href="/nosotros">Quiénes somos</a><a href="/contacto">Contacto</a><a href="/privacidad">Política de privacidad</a><a href="/terminos">Términos de uso</a></nav>
   © 2026 Calculadora Hogar. Información de referencia basada en la ley colombiana; no reemplaza la asesoría de un abogado o contador.
 </footer>
 </body>
